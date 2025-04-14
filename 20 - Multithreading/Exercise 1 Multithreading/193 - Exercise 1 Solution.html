@@ -1,0 +1,19 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>program that creates two threads, each of which counts from 1 to 10. The threads should print out their count values as they go.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+
+using namespace std;
+
+void count(int thread_num) {
+    for (int i = 1; i &lt;= 10; i++) {
+        cout &lt;&lt; "Thread " &lt;&lt; thread_num &lt;&lt; ": " &lt;&lt; i &lt;&lt; endl;
+    }
+}
+
+int main() {
+    thread t1(count, 1);
+    thread t2(count, 2);
+    t1.join();
+    t2.join();
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The above code creates two threads t1 and t2 using the std::thread library. The count function is passed as a parameter to each of the threads, along with a thread number (1 for t1 and 2 for t2). The count function simply loops from 1 to 10 and prints out the thread number and count value. The main function waits for the threads to finish using the join() method, which ensures that the threads have completed before the program exits.</p>

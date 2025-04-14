@@ -1,0 +1,75 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should output a message based on the weather for the day entered by the user.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+enum WeatherType {
+    SUNNY,
+    CLOUDY,
+    RAINY,
+    STORMY,
+    SNOWY,
+    FOGGY,
+    WINDY
+};
+
+int main() {
+    int dayNum;
+    cout &lt;&lt; "Enter a number between 1 and 7: ";
+    cin &gt;&gt; dayNum;
+
+    if (dayNum &lt; 1 || dayNum &gt; 7) {
+        cout &lt;&lt; "Invalid day number." &lt;&lt; endl;
+        return 1;
+    }
+
+    WeatherType weather;
+    switch (dayNum) {
+        case 1:
+            weather = SUNNY;
+            break;
+        case 2:
+            weather = CLOUDY;
+            break;
+        case 3:
+            weather = RAINY;
+            break;
+        case 4:
+            weather = STORMY;
+            break;
+        case 5:
+            weather = SNOWY;
+            break;
+        case 6:
+            weather = FOGGY;
+            break;
+        case 7:
+            weather = WINDY;
+            break;
+    }
+
+    switch (weather) {
+        case SUNNY:
+            cout &lt;&lt; "It's a beautiful day. Enjoy the sunshine!" &lt;&lt; endl;
+            break;
+        case CLOUDY:
+            cout &lt;&lt; "It's a little gloomy outside today." &lt;&lt; endl;
+            break;
+        case RAINY:
+            cout &lt;&lt; "Don't forget your umbrella. It's going to rain today." &lt;&lt; endl;
+            break;
+        case STORMY:
+            cout &lt;&lt; "Stay indoors if you can. There's a storm brewing." &lt;&lt; endl;
+            break;
+        case SNOWY:
+            cout &lt;&lt; "Bundle up. It's cold and snowy outside." &lt;&lt; endl;
+            break;
+        case FOGGY:
+            cout &lt;&lt; "Be careful on the roads. It's a foggy day today." &lt;&lt; endl;
+            break;
+        case WINDY:
+            cout &lt;&lt; "Hold onto your hat. It's a windy day outside." &lt;&lt; endl;
+            break;
+    }
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><ul><li><p>First, the program prompts the user to input a number between 1 and 7 using the <code><strong>cout</strong></code> and <code><strong>cin</strong></code> statements.</p></li><li><p>The program then uses a switch statement to map the user's input to the corresponding day of the week using an enum value. If the input is invalid (i.e. not between 1 and 7), the program outputs an error message using <code><strong>cout</strong></code>.</p></li><li><p>Finally, the switch statement uses another switch statement to map the day of the week to the corresponding weather condition. The program outputs a message using <code><strong>cout</strong></code> that displays the day of the week and the weather condition for that day.</p></li></ul>

@@ -1,0 +1,13 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the values of a variable using a pointer to pointer.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num = 10;
+    int *ptr = &amp;num;
+    int **pptr = &amp;ptr;
+    
+    cout &lt;&lt; "The value of num is: " &lt;&lt; **pptr &lt;&lt; endl;
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we declare an integer variable <code><strong>num</strong></code> and initialize it with a value of 10. We then declare a pointer to the variable <code><strong>ptr</strong></code> and a pointer to the pointer <code><strong>pptr</strong></code>. We assign the address of the variable <code><strong>num</strong></code> to the pointer <code><strong>ptr</strong></code> and the address of the pointer <code><strong>ptr</strong></code> to the pointer to the pointer <code><strong>pptr</strong></code>.</p><p>We output the value of the variable <code><strong>num</strong></code> using the pointer to pointer <code><strong>pptr</strong></code>. We first dereference the pointer to pointer to get the pointer <code><strong>ptr</strong></code>, then dereference the pointer <code><strong>ptr</strong></code> to get the value of the variable <code><strong>num</strong></code>.</p>

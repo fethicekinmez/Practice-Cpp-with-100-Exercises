@@ -1,0 +1,32 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>This program demonstrates a simple implementation of a smart pointer class</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+ 
+// A generic smart pointer class
+template &lt;class T&gt;
+class SmartPtr {
+    T* ptr; // Actual pointer
+public:
+    // Constructor
+    explicit SmartPtr(T* p = NULL) { ptr = p; }
+ 
+    // Destructor
+    ~SmartPtr() { delete (ptr); }
+ 
+    // Overloading dereferencing operator
+    T&amp; operator*() { return *ptr; }
+ 
+    // Overloading arrow operator so that
+    // members of T can be accessed
+    // like a pointer (useful if T represents
+    // a class or struct or union type)
+    T* operator-&gt;() { return ptr; }
+};
+ 
+int main()
+{
+    SmartPtr&lt;int&gt; ptr(new int());
+    *ptr = 20;
+    cout &lt;&lt; *ptr;
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program creates an instance of the <code><strong>SmartPtr</strong></code> class for integers named <code><strong>ptr</strong></code>. It initializes <code><strong>ptr</strong></code> with a dynamically allocated integer. It then assigns a value of 20 to the integer using the <code><strong>*</strong></code> operator on <code><strong>ptr</strong></code>. Finally, it prints the value of the integer to the console using the <code><strong>&lt;&lt;</strong></code> operator. The <code><strong>SmartPtr</strong></code> destructor is called when the program ends, which deletes the dynamically allocated integer and frees up the memory.</p>

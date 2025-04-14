@@ -1,0 +1,15 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><br></p><p><strong>Exercise for reference: </strong>C++ program to take input of three numbers and output the largest number using ternary operator.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num1, num2, num3;
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; num1 &gt;&gt; num2 &gt;&gt; num3;
+
+    int largest = (num1 &gt; num2) ? ((num1 &gt; num3) ? num1 : num3) :
+                  ((num2 &gt; num3) ? num2 : num3);
+    cout &lt;&lt; "The largest number is " &lt;&lt; largest &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>In this program, we will take input of three numbers from the user and compare them using the ternary operator to determine the largest one. We will use nested ternary operators to compare all three numbers and output the largest one. If the first number is the largest, we will output it. If the second number is larger than the first one, we will compare it with the third number. If the second number is also the largest, we will output it. Otherwise, we will output the third number as the largest.</p>

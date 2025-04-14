@@ -1,0 +1,24 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program to copy the contents of one file into another file</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+using namespace std;
+
+int main() {
+    ifstream input_file("input.txt");
+    ofstream output_file("output.txt");
+    char c;
+
+    if (input_file.is_open() &amp;&amp; output_file.is_open()) {
+        while (input_file.get(c)) {
+            output_file &lt;&lt; c;
+        }
+        cout &lt;&lt; "File copied successfully." &lt;&lt; endl;
+        input_file.close();
+        output_file.close();
+    } else {
+        cout &lt;&lt; "Unable to open file." &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we use the ifstream and ofstream classes to read from one file and write to another file. We open the input file "input.txt" using ifstream input_file("input.txt") and the output file "output.txt" using ofstream output_file("output.txt").</p><p><br></p><p>We then check if both files are open using input_file.is_open() and output_file.is_open(). If both files are open, we read each character from the input file using input_file.get(c) and write it to the output file using output_file &lt;&lt; c. We repeat this process until we have read all the characters in the input file.</p><p><br></p><p>Once the copying is complete, we display a success message using cout &lt;&lt; "File copied successfully." &lt;&lt; endl; and close both files using input_file.close() and output_file.close().</p><p><br></p><p>If either file cannot be opened, we display an error message using cout &lt;&lt; "Unable to open file." &lt;&lt; endl;.</p><p><br></p><p>To use this program, you need to replace "input.txt" with the name of the file you want to copy from and "output.txt" with the name of the file you want to copy to.</p>

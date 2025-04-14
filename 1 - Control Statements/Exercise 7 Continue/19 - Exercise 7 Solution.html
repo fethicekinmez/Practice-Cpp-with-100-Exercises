@@ -1,0 +1,17 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><br></p><p><strong>Exercise for reference: </strong>program in C++ to print sum of odd no between 0 to 10 using continue.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int sum = 0;
+  
+  for(int i = 0; i &lt;= 10; i++) {
+    if(i % 2 == 0) {
+      continue; // Skip even numbers
+    }
+    sum += i; // Add odd numbers to sum
+  }
+
+  cout &lt;&lt; "Sum of odd numbers between 0 and 10: " &lt;&lt; sum &lt;&lt; endl;
+
+  return 0;
+}</pre><p><br><strong>Explanation:</strong></p><p>In the above code, we first declare an integer variable <code><strong>sum</strong></code> to store the sum of odd numbers.</p><p>We then use a <code><strong>for</strong></code> loop to iterate over the numbers between 0 and 10. Inside the loop, we use an <code><strong>if</strong></code> statement to check if the current number is even using the modulo operator. If the number is even, we skip it using the <code><strong>continue</strong></code> statement.</p><p>Otherwise, we add the current number to the <code><strong>sum</strong></code> variable.</p><p>Finally, we output the sum of odd numbers between 0 and 10 using <code><strong>cout</strong></code>.</p>

@@ -1,0 +1,19 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program to find the factorial of a given number using recursion.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int factorial(int n) {
+   if (n == 1) {
+       return 1;
+   } else {
+       return n * factorial(n-1);
+   }
+}
+
+int main() {
+   int n;
+   cout &lt;&lt; "Enter a positive integer: ";
+   cin &gt;&gt; n;
+   cout &lt;&lt; "The factorial of " &lt;&lt; n &lt;&lt; " is " &lt;&lt; factorial(n) &lt;&lt; endl;
+   return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we define a function called <code><strong>factorial</strong></code> that takes an integer parameter <code><strong>n</strong></code>. If <code><strong>n</strong></code> is 1, the function returns 1 (the base case). Otherwise, the function multiplies <code><strong>n</strong></code> with the result of calling the <code><strong>factorial</strong></code> function with <code><strong>n-1</strong></code> as the argument.</p>

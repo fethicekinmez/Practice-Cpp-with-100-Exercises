@@ -1,0 +1,50 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program that demonstrates multiple inheritance using a class hierarchy of a vehicle.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Engine {
+  protected:
+    string fuelType;
+  public:
+    Engine(string ft) {
+      fuelType = ft;
+    }
+    void printDetails() {
+      cout &lt;&lt; "Engine Details:\n";
+      cout &lt;&lt; "Fuel Type: " &lt;&lt; fuelType &lt;&lt; endl;
+    }
+};
+
+class Wheels {
+  protected:
+    int numWheels;
+  public:
+    Wheels(int nw) {
+      numWheels = nw;
+    }
+    void printDetails() {
+      cout &lt;&lt; "\nWheels Details:\n";
+      cout &lt;&lt; "Number of Wheels: " &lt;&lt; numWheels &lt;&lt; endl;
+    }
+};
+
+class Car: public Engine, public Wheels {
+  private:
+    string brand;
+  public:
+    Car(string brd, string ft, int nw): Engine(ft), Wheels(nw) {
+      brand = brd;
+    }
+    void printDetails() {
+      cout &lt;&lt; "\nCar Details:\n";
+      cout &lt;&lt; "Brand: " &lt;&lt; brand &lt;&lt; endl;
+      Engine::printDetails();
+      Wheels::printDetails();
+    }
+};
+
+int main() {
+  Car myCar("Ford", "Gasoline", 4);
+  myCar.printDetails();
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program creates a class hierarchy of a vehicle using multiple inheritance. The base class <code><strong>Engine</strong></code> has a private member variable <code><strong>fuelType</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the engine's details. The base class <code><strong>Wheels</strong></code> has a private member variable <code><strong>numWheels</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the wheel's details. The derived class <code><strong>Car</strong></code> inherits from both the <code><strong>Engine</strong></code> and <code><strong>Wheels</strong></code> classes and has a private member variable <code><strong>brand</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the car's details. The derived class accesses the <code><strong>fuelType</strong></code> and <code><strong>printDetails()</strong></code> member function from the <code><strong>Engine</strong></code> class, and the <code><strong>numWheels</strong></code> and <code><strong>printDetails()</strong></code> member function from the <code><strong>Wheels</strong></code> class, using multiple inheritance.</p>

@@ -1,0 +1,27 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>When the user presses Ctrl+C, the program should print a message and terminate.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;csignal&gt;
+#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+
+using namespace std;
+
+void sigint_handler(int signal_num)
+{
+    cout &lt;&lt; "Program interrupted by user." &lt;&lt; endl;
+    exit(signal_num);
+}
+
+int main()
+{
+    signal(SIGINT, sigint_handler);
+
+    cout &lt;&lt; "Hello, this is a signal handler example." &lt;&lt; endl;
+    cout &lt;&lt; "Press Ctrl+C to interrupt the program." &lt;&lt; endl;
+
+    while (true) {
+        cout &lt;&lt; "Hello World!" &lt;&lt; endl;
+        sleep(1);
+    }
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The given program demonstrates the use of the signal() function in C++ to register a signal handler for the SIGABRT signal. The modified program registers a signal handler for the SIGINT signal and defines the sigint_handler() function to print a message and exit the program when the user presses Ctrl+C to interrupt the program. The program prints a message to inform the user about the expected behavior and enters an infinite loop to repeatedly print the "Hello World!" message. When the user presses Ctrl+C, the signal handler function is called to print the message and exit the program.</p>

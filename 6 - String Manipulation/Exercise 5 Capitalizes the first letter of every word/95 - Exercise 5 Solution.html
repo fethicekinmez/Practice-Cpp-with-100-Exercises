@@ -1,0 +1,24 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that takes a string input from the user and capitalizes the first letter of every word in the string:</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+  string str;
+  cout &lt;&lt; "Enter a string: ";
+  getline(cin, str);
+
+  bool capitalize = true;
+  for (int i = 0; i &lt; str.length(); i++) {
+    if (isspace(str[i])) {
+      capitalize = true;
+    } else if (capitalize) {
+      str[i] = toupper(str[i]);
+      capitalize = false;
+    }
+  }
+
+  cout &lt;&lt; "Capitalized string: " &lt;&lt; str &lt;&lt; endl;
+
+  return 0;
+}</pre><p><br><strong>Explanation:</strong></p><ul><li><p>First, we declare a string variable <code><strong>str</strong></code> and ask the user to enter a string using the <code><strong>getline</strong></code> function.</p></li><li><p>We then declare a boolean variable <code><strong>capitalize</strong></code> and initialize it to <code><strong>true</strong></code>.</p></li><li><p>We then use a <code><strong>for</strong></code> loop to iterate over every character in the string. If a space character is encountered, we set <code><strong>capitalize</strong></code> to <code><strong>true</strong></code> to indicate that the next character encountered should be capitalized. If a non-space character is encountered and <code><strong>capitalize</strong></code> is <code><strong>true</strong></code>, we use the <code><strong>toupper</strong></code> function to capitalize the character and set <code><strong>capitalize</strong></code> to <code><strong>false</strong></code> to indicate that the next character encountered should not be capitalized.</p></li><li><p>Finally, we print out the capitalized string to the console.</p></li></ul>

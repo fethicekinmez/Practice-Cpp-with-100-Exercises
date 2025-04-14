@@ -1,0 +1,50 @@
+<figure><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></figure>
+<p><strong><u>Exercise for reference:</u>
+
+
+
+</strong></p>
+<p><br></p>
+<pre class="prettyprint linenums">1 
+1 2 
+1 2 3 
+1 2 3 4</pre>
+<p><br></p>
+<p><strong><u>Answer:</u>
+
+
+
+
+
+
+
+</strong></p>
+<p><br></p>
+<pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+&nbsp; &nbsp; // Outer loop to iterate through each row
+&nbsp; &nbsp; for (int i = 1; i &lt;= 4; i++) {
+&nbsp; &nbsp; &nbsp; &nbsp; // Inner loop to print the numbers in the current row
+&nbsp; &nbsp; &nbsp; &nbsp; for (int j = 1; j &lt;= i; j++) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; j &lt;&lt; " "; // Print the current number followed by a space
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; endl; // Move to the next row by printing a newline character
+&nbsp; &nbsp; }
+&nbsp; &nbsp; return 0; // Return 0 to indicate successful program execution
+}
+</pre>
+<p><br></p>
+<p><strong>
+
+
+
+<u>Explanation:</u>
+
+
+
+</strong></p>
+<p><br></p>
+<ol><li><p>We include the <code><strong>iostream</strong></code> header, which allows us to use input and output operations in our program.</p></li><li><p>We use the <code><strong>using namespace std;</strong></code> statement to avoid having to type <code><strong>std::</strong></code> in front of every standard library function.</p></li><li><p>We define the <code><strong>main()</strong></code> function, which is the entry point of our program.</p></li><li><p>We use an outer <code><strong>for</strong></code> loop to iterate through each row of the pattern. The loop variable <code><strong>i</strong></code> starts from 1 and goes up to 4 (inclusive).</p></li><li><p>Inside the outer loop, we use an inner <code><strong>for</strong></code> loop to print the numbers in the current row. The loop variable <code><strong>j</strong></code> starts from 1 and goes up to the current value of <code><strong>i</strong></code> (inclusive).</p></li><li><p>Inside the inner loop, we use the <code><strong>cout</strong></code> statement to print the current number <code><strong>j</strong></code>, followed by a space.</p></li><li><p>After the inner loop finishes, we use the <code><strong>cout</strong></code> statement again to print a newline character, which moves us to the next row.</p></li><li><p>After the outer loop finishes, we use the <code><strong>return</strong></code> statement to indicate that the program has executed successfully.</p></li></ol>

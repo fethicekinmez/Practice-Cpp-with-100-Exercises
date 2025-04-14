@@ -1,0 +1,26 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>template function that can find the minimum value in an array of any data type.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+T findMin(T arr[], int n) {
+    T minVal = arr[0];
+    for (int i = 1; i &lt; n; i++) {
+        if (arr[i] &lt; minVal) {
+            minVal = arr[i];
+        }
+    }
+    return minVal;
+}
+
+int main() {
+    int intArr[] = {5, 3, 1, 8, 6};
+    double doubleArr[] = {3.2, 1.5, 4.6, 7.8, 2.1};
+    char charArr[] = {'B', 'A', 'D', 'C', 'E'};
+
+    cout &lt;&lt; "Minimum value in int array: " &lt;&lt; findMin(intArr, 5) &lt;&lt; endl;
+    cout &lt;&lt; "Minimum value in double array: " &lt;&lt; findMin(doubleArr, 5) &lt;&lt; endl;
+    cout &lt;&lt; "Minimum value in char array: " &lt;&lt; findMin(charArr, 5) &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><strong>Explanation:</strong></p><p>This is a C++ program that demonstrates the use of a template function to find the minimum value in an array of any data type. The function takes two parameters: an array of type T and its size n. It returns the minimum value in the array.</p><p>The <code><strong>findMin</strong></code> function works by initializing the minimum value to the first element of the array. It then iterates over the remaining elements of the array, checking if each element is smaller than the current minimum value. If it is, the minimum value is updated to that element.</p><p>The <code><strong>main</strong></code> function declares three arrays of different data types and passes them to the <code><strong>findMin</strong></code> function. The minimum value of each array is printed to the console using <code><strong>cout</strong></code>.</p><p>Overall, this program demonstrates how templates can be used to write generic code that can work with any data type.</p>

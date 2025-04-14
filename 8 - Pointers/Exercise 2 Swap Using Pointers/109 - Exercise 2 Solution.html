@@ -1,0 +1,28 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the values of the two variables after they have been swapped.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 5;
+    int y = 10;
+    int *p = &amp;x;
+    int *q = &amp;y;
+    
+    int temp = *p;
+    *p = *q;
+    *q = temp;
+    
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+    cout &lt;&lt; "y = " &lt;&lt; y &lt;&lt; endl;
+    
+    return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we declare two integer variables <code><strong>x</strong></code> and <code><strong>y</strong></code>, and two pointers to integers <code><strong>p</strong></code> and <code><strong>q</strong></code>. We then use the pointers to swap the values of <code><strong>x</strong></code> and <code><strong>y</strong></code>.</p><p>To swap two variables using pointers, we first need to declare pointers to those variables. We then use the pointers to access the values of the variables and swap them.</p><p>In this program, we use the following steps to swap the variables:</p><p><br></p><ol><li><p>Declare the variables and pointers:</p></li></ol><pre class="prettyprint linenums">int x = 5;
+int y = 10;
+int *p = &amp;x;
+int *q = &amp;y;</pre><ol start="2"><li><p>Swap the values using pointers:</p></li></ol><pre class="prettyprint linenums">int temp = *p;
+*p = *q;
+*q = temp;
+</pre><ol start="3"><li><p>Output the values of the variables:</p></li></ol><pre class="prettyprint linenums">cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+cout &lt;&lt; "y = " &lt;&lt; y &lt;&lt; endl;
+</pre><p>The output should be:</p><pre class="prettyprint linenums">x = 10
+y = 5
+</pre><p><br></p>

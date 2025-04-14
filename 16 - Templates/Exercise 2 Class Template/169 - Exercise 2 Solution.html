@@ -1,0 +1,71 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>implementation of a template class for a generic stack data structure in C++function:</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class Stack {
+private:
+    vector&lt;T&gt; data;  // underlying data structure
+
+public:
+    // push an element onto the stack
+    void push(T element) {
+        data.push_back(element);
+    }
+
+    // remove and return the top element from the stack
+    T pop() {
+        if (data.empty()) {
+            throw out_of_range("Stack is empty.");
+        }
+        T top = data.back();
+        data.pop_back();
+        return top;
+    }
+
+    // return the top element of the stack
+    T top() {
+        if (data.empty()) {
+            throw out_of_range("Stack is empty.");
+        }
+        return data.back();
+    }
+
+    // return true if the stack is empty, false otherwise
+    bool empty() const {
+        return data.empty();
+    }
+
+    // return the number of elements in the stack
+    size_t size() const {
+        return data.size();
+    }
+};
+
+int main() {
+    // create a stack of integers
+    Stack&lt;int&gt; intStack;
+
+    // push some integers onto the stack
+    intStack.push(1);
+    intStack.push(2);
+    intStack.push(3);
+
+    // pop some integers from the stack
+    cout &lt;&lt; intStack.pop() &lt;&lt; endl;  // prints 3
+    cout &lt;&lt; intStack.pop() &lt;&lt; endl;  // prints 2
+
+    // create a stack of doubles
+    Stack&lt;double&gt; doubleStack;
+
+    // push some doubles onto the stack
+    doubleStack.push(3.14);
+    doubleStack.push(2.718);
+
+    // pop some doubles from the stack
+    cout &lt;&lt; doubleStack.pop() &lt;&lt; endl;  // prints 2.718
+    cout &lt;&lt; doubleStack.pop() &lt;&lt; endl;  // prints 3.14
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this implementation, the <code><strong>Stack</strong></code> class uses a <code><strong>vector</strong></code> as its underlying data structure to store elements of any data type. The class provides methods to push elements onto the stack, pop elements from the stack, return the top element of the stack, check if the stack is empty, and get the number of elements in the stack. The class is defined as a template class using the <code><strong>typename</strong></code> keyword to allow for any data type to be used with the stack.</p><p>When instantiated with a specific data type, the <code><strong>Stack</strong></code> class can be used just like any other stack data structure to store and retrieve elements of that data type. In the example provided, we create a stack of integers and a stack of doubles, push some elements onto the stacks, and pop some elements from the stacks to demonstrate the use of the class.</p><p><br></p>

@@ -1,0 +1,27 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program that reads data from a file. Use exception handling to catch the file not found exception if the file does not exist and display an error message to the user.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main()
+{
+    string filename;
+    cout &lt;&lt; "Enter filename: ";
+    cin &gt;&gt; filename;
+
+    ifstream infile;
+    infile.open(filename);
+
+    try {
+        if (!infile.is_open())
+            throw "File not found.";
+        // read data from file
+        cout &lt;&lt; "Data read from file." &lt;&lt; endl;
+        infile.close();
+    }
+    catch (const char* msg) {
+        cerr &lt;&lt; "Exception: " &lt;&lt; msg &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program prompts the user to enter the filename and uses exception handling to catch the file not found exception. We first read the filename using <code><strong>cin</strong></code>. We then create an <code><strong>ifstream</strong></code> object and open the file using the <code><strong>open()</strong></code> function. We then use a try-catch block to catch the exceptions. If the file is not found, we throw an exception with a custom error message. If the file is found, we read data from the file and print a message indicating that the data has been read.</p>

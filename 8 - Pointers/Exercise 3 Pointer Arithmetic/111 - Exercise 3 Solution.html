@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program to find the sum of two numbers using pointers.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num1, num2, sum;
+    int *ptr1, *ptr2;
+    
+    cout &lt;&lt; "Enter first number: ";
+    cin &gt;&gt; num1;
+    cout &lt;&lt; "Enter second number: ";
+    cin &gt;&gt; num2;
+    
+    ptr1 = &amp;num1;
+    ptr2 = &amp;num2;
+    
+    sum = *ptr1 + *ptr2;
+    
+    cout &lt;&lt; "The sum of " &lt;&lt; num1 &lt;&lt; " and " &lt;&lt; num2 &lt;&lt; " is: " &lt;&lt; sum &lt;&lt; endl;
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we declare two integer variables <code><strong>num1</strong></code> and <code><strong>num2</strong></code>, and two pointers to integers <code><strong>ptr1</strong></code> and <code><strong>ptr2</strong></code>. We then assign the addresses of the variables to the pointers using the address-of operator (<code><strong>&amp;</strong></code>).</p><p>To add the values of the variables using pointers, we use the dereference operator (<code><strong>*</strong></code>) to access the values of the variables through the pointers. We then add the values and store the result in a separate integer variable <code><strong>sum</strong></code>.</p><p>The program should output the value of the <code><strong>sum</strong></code> variable, which is the sum of the two numbers.</p>

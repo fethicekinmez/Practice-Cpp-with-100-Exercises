@@ -1,0 +1,21 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the reversed array.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+   int arr[] = {1, 2, 3, 4, 5};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   
+   for (int i = 0; i &lt; n/2; i++) {
+      int temp = arr[i];
+      arr[i] = arr[n-i-1];
+      arr[n-i-1] = temp;
+   }
+
+   cout &lt;&lt; "The reversed array is: ";
+   for (int i = 0; i &lt; n; i++) {
+      cout &lt;&lt; arr[i] &lt;&lt; " ";
+   }
+   cout &lt;&lt; endl;
+
+   return 0;
+}</pre><p><br><strong>Explanation:</strong></p><ul><li><p>The array <code><strong>arr</strong></code> is initialized with values 1, 2, 3, 4, 5.</p></li><li><p>The variable <code><strong>n</strong></code> is set to the size of the array, which is calculated by dividing the total size of the array by the size of each element.</p></li><li><p>The for loop starts from the first element of the array and iterates up to the middle element of the array, which is calculated as <code><strong>n/2</strong></code>.</p></li><li><p>Inside the for loop, the variable <code><strong>temp</strong></code> is used to store the value of the element at the current index.</p></li><li><p>The element at the current index is set to the value of the element at the corresponding index from the end of the array, which is calculated as <code><strong>n-i-1</strong></code>.</p></li><li><p>The element at the corresponding index from the end of the array is set to the value of the <code><strong>temp</strong></code> variable, which swaps the elements at the current index and its corresponding index from the end of the array.</p></li><li><p>After the for loop, the reversed array is printed to the console using another for loop that iterates over the array and prints each element separated by a space.</p></li></ul><p>The end result is an array that has been reversed in place, meaning that no additional memory was required to store a separate reversed copy of the array.</p>

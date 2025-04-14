@@ -1,0 +1,29 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>program that reads in a list of integers from the user and uses the <code><strong>std::partition</strong></code> function to partition the list into two parts: even numbers and odd numbers. Print out the modified list.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    int n;
+    std::cout &lt;&lt; "Enter the number of integers: ";
+    std::cin &gt;&gt; n;
+
+    std::vector&lt;int&gt; nums(n);
+    for (int i = 0; i &lt; n; i++) {
+        std::cout &lt;&lt; "Enter integer #" &lt;&lt; i + 1 &lt;&lt; ": ";
+        std::cin &gt;&gt; nums[i];
+    }
+
+    auto it = std::partition(nums.begin(), nums.end(), [](int n){ return n % 2 == 0; });
+
+    std::cout &lt;&lt; "The modified list is: ";
+    for (auto i = nums.begin(); i != it; i++) {
+        std::cout &lt;&lt; *i &lt;&lt; " ";
+    }
+    for (auto i = it; i != nums.end(); i++) {
+        std::cout &lt;&lt; *i &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program reads in the number of integers to be input by the user, creates a vector to store the integers, reads in the integers one by one, and then uses the <code><strong>std::partition</strong></code> function to partition the vector into two parts: even numbers and odd numbers. The lambda expression <code><strong>(int n){ return n % 2 == 0; }</strong></code> is used as the predicate for the partition. Finally, the modified list is printed out to the console.</p>

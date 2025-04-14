@@ -1,0 +1,25 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the sum of the two input numbers.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int addNumbers(int num1, int num2) {
+    int sum = num1 + num2;
+    return sum;
+}
+
+int main() {
+    int num1, num2;
+    
+    cout &lt;&lt; "Enter the first number: ";
+    cin &gt;&gt; num1;
+    
+    cout &lt;&lt; "Enter the second number: ";
+    cin &gt;&gt; num2;
+    
+    int sum = addNumbers(num1, num2);
+    
+    cout &lt;&lt; "The sum of the two numbers is: " &lt;&lt; sum &lt;&lt; endl;
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this code, we first include the necessary header files to use <code><strong>iostream</strong></code> library. Then, we define a function <code><strong>addNumbers</strong></code> to add two numbers and return their sum. The function takes two input arguments - the two numbers to be added - and returns their sum.</p><p>In the <code><strong>main</strong></code> function, we ask the user to enter two numbers using the <code><strong>cin</strong></code> function. We then call the <code><strong>addNumbers</strong></code> function to calculate their sum and store the result in the <code><strong>sum</strong></code> variable. Finally, we print the sum using the <code><strong>cout</strong></code> function.</p>

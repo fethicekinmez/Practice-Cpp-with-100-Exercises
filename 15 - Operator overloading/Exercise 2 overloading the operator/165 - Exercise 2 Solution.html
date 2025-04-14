@@ -1,0 +1,61 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should display the count before and after the increment and decrement operations.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Counter {
+private:
+    int count;
+public:
+    Counter() : count(0) {}
+    
+    // Prefix increment operator ++
+    Counter operator++ () {
+        ++count;
+        return *this;
+    }
+    
+    // Prefix decrement operator --
+    Counter operator-- () {
+        --count;
+        return *this;
+    }
+    
+    // Postfix increment operator ++ (int)
+    Counter operator++ (int) {
+        Counter temp(*this);
+        ++count;
+        return temp;
+    }
+    
+    // Postfix decrement operator -- (int)
+    Counter operator-- (int) {
+        Counter temp(*this);
+        --count;
+        return temp;
+    }
+    
+    int getCount() const {
+        return count;
+    }
+};
+
+int main() {
+    Counter c1;
+    cout &lt;&lt; "c1 = " &lt;&lt; c1.getCount() &lt;&lt; endl;
+    
+    ++c1;
+    cout &lt;&lt; "c1 = " &lt;&lt; c1.getCount() &lt;&lt; endl;
+    
+    --c1;
+    cout &lt;&lt; "c1 = " &lt;&lt; c1.getCount() &lt;&lt; endl;
+    
+    Counter c2 = c1++;
+    cout &lt;&lt; "c1 = " &lt;&lt; c1.getCount() &lt;&lt; endl;
+    cout &lt;&lt; "c2 = " &lt;&lt; c2.getCount() &lt;&lt; endl;
+    
+    Counter c3 = c1--;
+    cout &lt;&lt; "c1 = " &lt;&lt; c1.getCount() &lt;&lt; endl;
+    cout &lt;&lt; "c3 = " &lt;&lt; c3.getCount() &lt;&lt; endl;
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this example, we have a <code><strong>Counter</strong></code> class that keeps track of a count. We overload the prefix and postfix increment and decrement operators.</p><p>The prefix increment and decrement operators (<code><strong>++count</strong></code> and <code><strong>--count</strong></code>) simply increment or decrement the count and return the updated object.</p><p>The postfix increment and decrement operators (<code><strong>++count(int)</strong></code> and <code><strong>--count(int)</strong></code>) first create a copy of the object, then increment or decrement the count, and finally return the copy.</p><p>In the <code><strong>main</strong></code> function, we create a <code><strong>Counter</strong></code> object and demonstrate how the overloaded operators work. We first output the initial count. We then use the prefix increment and decrement operators to increment and decrement the count. We also use the postfix increment and decrement operators and demonstrate how the updated count is returned.</p>

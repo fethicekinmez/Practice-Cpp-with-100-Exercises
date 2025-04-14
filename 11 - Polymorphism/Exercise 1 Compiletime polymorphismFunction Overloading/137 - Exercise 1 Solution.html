@@ -1,0 +1,27 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the sum of the two integers and the sum of the two floats, respectively.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+float sum(float a, float b) {
+    return a + b;
+}
+
+int main() {
+    int x, y;
+    float p, q;
+
+    cout &lt;&lt; "Enter two integers: ";
+    cin &gt;&gt; x &gt;&gt; y;
+
+    cout &lt;&lt; "Enter two floats: ";
+    cin &gt;&gt; p &gt;&gt; q;
+
+    cout &lt;&lt; "Sum of integers: " &lt;&lt; sum(x, y) &lt;&lt; endl;
+    cout &lt;&lt; "Sum of floats: " &lt;&lt; sum(p, q) &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>Compile-time polymorphism is a mechanism by which a program can have multiple functions with the same name, but different argument lists, and the correct function is called based on the types of arguments passed to it at compile-time. This is achieved through function overloading, which is the ability to define multiple functions with the same name but different argument lists.</p><p>In C++, function overloading is determined by the number, type, and order of the arguments passed to a function. When a function call is made, the compiler looks for a function with the same name and the same number of arguments as the function call. If such a function is found, the compiler checks if the types of the arguments match the parameter types of the function. If there is a match, the function is called. Otherwise, the compiler tries to find another function with the same name and number of arguments, and repeats the process until a match is found or all functions have been checked.</p><p>In the example code provided, the program defines two functions with the same name <code><strong>sum</strong></code>, but different parameter lists - one that accepts two integers, and another that accepts two floats. When the program calls <code><strong>sum</strong></code> with two integers or two floats, the correct function is called based on the types of the arguments passed to it.</p><p>Overall, compile-time polymorphism is a useful feature in C++ that allows for more flexible and concise code by allowing multiple functions with the same name, but different parameter lists, to be defined in a program.</p><p><br></p>

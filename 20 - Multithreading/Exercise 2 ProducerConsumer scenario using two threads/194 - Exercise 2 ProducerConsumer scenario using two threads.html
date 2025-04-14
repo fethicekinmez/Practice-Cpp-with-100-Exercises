@@ -1,0 +1,10 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-52-16-09e96e0d1f1ee654714aa5f1ed66afad.JPG"></p><p><strong>Question: </strong>Write a program that creates a producer-consumer scenario using two threads. The producer thread should generate a random number between 1 and 100 every second and add it to a shared buffer. The consumer thread should read numbers from the buffer and print them out as they are read. The program should continue until the consumer thread has read 10 numbers from the buffer.</p><p><strong>Expected output</strong>:</p><p>The program should output 10 random numbers between 1 and 100 that are read from the shared buffer by the consumer thread.</p><p><br></p><pre class="prettyprint linenums">49
+13
+67
+81
+97
+21
+45
+72
+92
+26</pre><figure><img src="https://img-c.udemycdn.com/redactor/2017-01-03_12-37-46-370c6959ad96a30590d3b07d53ae3d3f/Arrrows.bmp"></figure><p><strong>Hint:</strong></p><ol><li><p>Use a std::queue to implement the shared buffer.</p></li><li><p>Use std::thread to create two threads for the producer and consumer functions.</p></li><li><p>Use std::mutex and std::condition_variable to synchronize access to the shared buffer.</p></li></ol>

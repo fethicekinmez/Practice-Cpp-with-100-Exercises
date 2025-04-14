@@ -1,0 +1,34 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that creates a <code><strong>struct</strong></code> to store information about a book, as well as two functions to prompt the user for the book's information and display the book's information</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct Book {
+    string title;
+    string author;
+    int publication_year;
+};
+
+void inputBookInfo(Book&amp; book) {
+    cout &lt;&lt; "Enter the book's title: ";
+    getline(cin, book.title);
+    cout &lt;&lt; "Enter the book's author: ";
+    getline(cin, book.author);
+    cout &lt;&lt; "Enter the book's publication year: ";
+    cin &gt;&gt; book.publication_year;
+}
+
+void displayBookInfo(const Book&amp; book) {
+    cout &lt;&lt; "Title: " &lt;&lt; book.title &lt;&lt; endl;
+    cout &lt;&lt; "Author: " &lt;&lt; book.author &lt;&lt; endl;
+    cout &lt;&lt; "Publication year: " &lt;&lt; book.publication_year &lt;&lt; endl;
+}
+
+int main() {
+    Book myBook;
+    inputBookInfo(myBook);
+    cout &lt;&lt; "\nBook information:\n";
+    displayBookInfo(myBook);
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In the <code><strong>main</strong></code> function, we create a <code><strong>Book</strong></code> struct called <code><strong>myBook</strong></code>. We then call the <code><strong>inputBookInfo</strong></code> function, passing in a reference to <code><strong>myBook</strong></code>, which prompts the user to enter the book's title, author, and publication year.</p><p>After the user enters the information, we call the <code><strong>displayBookInfo</strong></code> function, passing in a constant reference to <code><strong>myBook</strong></code>, which displays the book's information in the console.</p><p>In the <code><strong>inputBookInfo</strong></code> function, we use <code><strong>getline</strong></code> to read the title and author inputs, as <code><strong>getline</strong></code> is better suited to handle inputs that contain spaces.</p><p>Note that in the <code><strong>displayBookInfo</strong></code> function, we use a constant reference to the <code><strong>Book</strong></code> struct, as we do not want to modify its contents in this function.</p>

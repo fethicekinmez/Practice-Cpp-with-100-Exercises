@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>print out the square pattern.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  // Ask the user to enter the size of the square
+  int size;
+  cout &lt;&lt; "Enter the size of the square: ";
+  cin &gt;&gt; size;
+
+  // Outer loop to control the rows of the square
+  for (int i = 0; i &lt; size; i++) {
+    // Inner loop to control the columns of the square
+    for (int j = 0; j &lt; size; j++) {
+      // Print an asterisk for each square in the overall square
+      cout &lt;&lt; "*";
+    }
+    // Print a newline character to move to the next row
+    cout &lt;&lt; "\n";
+  }
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program first prompts the user to enter the size of the square, which is stored in the integer variable <code><strong>size</strong></code>. The program then uses a nested loop to print out the square. The outer loop runs <code><strong>size</strong></code> times and controls the rows of the square, while the inner loop also runs <code><strong>size</strong></code> times and controls the columns of the square. Inside the inner loop, the program prints out an asterisk <code><strong>*</strong></code>, which represents one of the squares in the overall square. Finally, after printing out a row of asterisks, the program prints a newline character to move to the next row. This process is repeated until the entire square is printed.</p>

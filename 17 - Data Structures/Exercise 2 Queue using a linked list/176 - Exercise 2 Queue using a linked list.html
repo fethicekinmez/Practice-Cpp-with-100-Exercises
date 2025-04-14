@@ -1,0 +1,40 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-52-16-09e96e0d1f1ee654714aa5f1ed66afad.JPG"></p><p><strong>Question: </strong>Write a C++ program to implement a queue using a linked list. </p><p><br></p><p><strong>Expected output</strong>:</p><p>The program should provide a menu to the user to perform the following operations on the queue:</p><ol><li><p>Enqueue an element</p></li><li><p>Dequeue an element</p></li><li><p>Display the queue</p></li><li><p>Exit the program</p></li></ol><p><br></p><pre class="prettyprint linenums">---- Queue using Linked List ----
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+
+Enter your choice: 1
+
+Enter the value to be enqueued: 10
+
+Element enqueued successfully.
+
+Enter your choice: 1
+
+Enter the value to be enqueued: 20
+
+Element enqueued successfully.
+
+Enter your choice: 1
+
+Enter the value to be enqueued: 30
+
+Element enqueued successfully.
+
+Enter your choice: 3
+
+Queue: 10 20 30
+
+Enter your choice: 2
+
+Element dequeued successfully.
+
+Enter your choice: 3
+
+Queue: 20 30
+
+Enter your choice: 4
+
+Exiting the program...
+</pre><figure><img src="https://img-c.udemycdn.com/redactor/2017-01-03_12-37-46-370c6959ad96a30590d3b07d53ae3d3f/Arrrows.bmp"></figure><p><strong>Hint:</strong></p><p>To implement a queue using a linked list in C++, you can define a node structure that contains the data and a pointer to the next node in the list. To create a queue, you can define two pointers: a front pointer that points to the first element in the queue, and a rear pointer that points to the last element in the queue. To enqueue an element, you can create a new node and add it to the end of the linked list pointed to by the rear pointer. To dequeue an element, you can delete the first node in the linked list pointed to by the front pointer. To display the elements of the queue, you can traverse the linked list starting from the front pointer and print each element as you go.</p>

@@ -1,0 +1,25 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>Program to swap two numbers using call by reference.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+void swapNumbers(int &amp;a, int &amp;b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int a = 5, b = 7;
+    
+    cout &lt;&lt; "Before swapping:" &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; "b = " &lt;&lt; b &lt;&lt; endl;
+    
+    swapNumbers(a, b);
+    
+    cout &lt;&lt; "After swapping:" &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; "b = " &lt;&lt; b &lt;&lt; endl;
+    
+    return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this code, we first include the necessary header files to use <code><strong>iostream</strong></code> library. Then, we define a function <code><strong>swapNumbers</strong></code> to swap the values of two numbers. The function takes two input arguments - the two numbers to be swapped - and swaps their values using references (memory addresses). Any changes made to <code><strong>a</strong></code> and <code><strong>b</strong></code> inside the <code><strong>swapNumbers</strong></code> function will affect the original values of <code><strong>a</strong></code> and <code><strong>b</strong></code> in the <code><strong>main</strong></code> function.</p><p>In the <code><strong>main</strong></code> function, we declare two integer variables <code><strong>a</strong></code> and <code><strong>b</strong></code> and initialize them with the values 5 and 7. We then print the values of <code><strong>a</strong></code> and <code><strong>b</strong></code> using the <code><strong>cout</strong></code> function. We call the <code><strong>swapNumbers</strong></code> function to swap the values of <code><strong>a</strong></code> and <code><strong>b</strong></code>. Finally, we print the swapped values of <code><strong>a</strong></code> and <code><strong>b</strong></code> using the <code><strong>cout</strong></code> function. As we used call by reference, the values of <code><strong>a</strong></code> and <code><strong>b</strong></code> in the <code><strong>main</strong></code> function are changed after the function call.</p>

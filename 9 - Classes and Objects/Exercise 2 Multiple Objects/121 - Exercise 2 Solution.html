@@ -1,0 +1,27 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Define a class called "Book" that has three attributes: "title" (a string), "author" (a string), and "year" (an integer). In the main function, create two objects of the "Book" class, set the values for their attributes, and print them out.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+class Book {
+  public:
+    string title;
+    string author;
+    int year;
+};
+
+int main() {
+  Book book1;
+  book1.title = "The Catcher in the Rye";
+  book1.author = "J.D. Salinger";
+  book1.year = 1951;
+
+  Book book2;
+  book2.title = "To Kill a Mockingbird";
+  book2.author = "Harper Lee";
+  book2.year = 1960;
+
+  cout &lt;&lt; book1.title &lt;&lt; " by " &lt;&lt; book1.author &lt;&lt; " (" &lt;&lt; book1.year &lt;&lt; ")\n";
+  cout &lt;&lt; book2.title &lt;&lt; " by " &lt;&lt; book2.author &lt;&lt; " (" &lt;&lt; book2.year &lt;&lt; ")\n";
+  return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program defines a class called "Book" with three attributes: "title" (a string), "author" (a string), and "year" (an integer). The main function creates two objects of the "Book" class, sets the values for their attributes, and then prints them out using the dot notation to access the attributes of the objects.</p>

@@ -1,0 +1,32 @@
+<figure><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></figure><p><strong>Exercise for reference: </strong>The program to swap two values using a template function:</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+template&lt;typename T&gt;
+void swapValues(T&amp; value1, T&amp; value2) {
+    T temp = value1;
+    value1 = value2;
+    value2 = temp;
+}
+
+int main() {
+    int intVal1 = 5, intVal2 = 10;
+    double doubleVal1 = 3.14, doubleVal2 = 6.28;
+    char charVal1 = 'a', charVal2 = 'b';
+
+    cout &lt;&lt; "Before swapping:" &lt;&lt; endl;
+    cout &lt;&lt; "int values: " &lt;&lt; intVal1 &lt;&lt; ", " &lt;&lt; intVal2 &lt;&lt; endl;
+    cout &lt;&lt; "double values: " &lt;&lt; doubleVal1 &lt;&lt; ", " &lt;&lt; doubleVal2 &lt;&lt; endl;
+    cout &lt;&lt; "char values: " &lt;&lt; charVal1 &lt;&lt; ", " &lt;&lt; charVal2 &lt;&lt; endl;
+
+    swapValues(intVal1, intVal2);
+    swapValues(doubleVal1, doubleVal2);
+    swapValues(charVal1, charVal2);
+
+    cout &lt;&lt; "After swapping:" &lt;&lt; endl;
+    cout &lt;&lt; "int values: " &lt;&lt; intVal1 &lt;&lt; ", " &lt;&lt; intVal2 &lt;&lt; endl;
+    cout &lt;&lt; "double values: " &lt;&lt; doubleVal1 &lt;&lt; ", " &lt;&lt; doubleVal2 &lt;&lt; endl;
+    cout &lt;&lt; "char values: " &lt;&lt; charVal1 &lt;&lt; ", " &lt;&lt; charVal2 &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program defines a template function named <code><strong>swapValues</strong></code> that takes two references of type <code><strong>T</strong></code> as input parameters. The function uses a temporary variable of type <code><strong>T</strong></code> to swap the values of the two input parameters.</p><p>In the <code><strong>main</strong></code> function, two variables <code><strong>x</strong></code> and <code><strong>y</strong></code> are defined, one of type <code><strong>int</strong></code> and the other of type <code><strong>double</strong></code>. The initial values of <code><strong>x</strong></code> and <code><strong>y</strong></code> are printed on the console. Then, the <code><strong>swapValues</strong></code> function is called twice, once with <code><strong>x</strong></code> and <code><strong>y</strong></code> as input parameters, and once with <code><strong>a</strong></code> and <code><strong>b</strong></code> as input parameters. After each call to <code><strong>swapValues</strong></code>, the new values of the variables are printed on the console.</p><p>The output of the program shows that the values of <code><strong>x</strong></code> and <code><strong>y</strong></code> have been swapped, as well as the values of <code><strong>a</strong></code> and <code><strong>b</strong></code>. This demonstrates the flexibility of the template function, as it can be used with different data types.</p>

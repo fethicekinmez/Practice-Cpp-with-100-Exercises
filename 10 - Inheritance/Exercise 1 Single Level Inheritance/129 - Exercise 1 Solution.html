@@ -1,0 +1,46 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>C++ program that demonstrates single level inheritance using a class hierarchy of vehicles</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Vehicle {
+  protected:
+    string make;
+    string model;
+    int year;
+  public:
+    Vehicle(string mk, string mdl, int yr) {
+      make = mk;
+      model = mdl;
+      year = yr;
+    }
+    void printDetails() {
+      cout &lt;&lt; "Vehicle Details:\n";
+      cout &lt;&lt; "Make: " &lt;&lt; make &lt;&lt; endl;
+      cout &lt;&lt; "Model: " &lt;&lt; model &lt;&lt; endl;
+      cout &lt;&lt; "Year: " &lt;&lt; year &lt;&lt; endl;
+    }
+};
+
+class Car: public Vehicle {
+  private:
+    int numDoors;
+  public:
+    Car(string mk, string mdl, int yr, int doors): Vehicle(mk, mdl, yr) {
+      numDoors = doors;
+    }
+    void printDetails() {
+      Vehicle::printDetails();
+      cout &lt;&lt; "\nCar Details:\n";
+      cout &lt;&lt; "Number of Doors: " &lt;&lt; numDoors &lt;&lt; endl;
+    }
+};
+
+int main() {
+  Vehicle v("Toyota", "Camry", 2022);
+  v.printDetails();
+
+  Car c("Toyota", "Camry", 2022, 4);
+  c.printDetails();
+
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program creates a class hierarchy of vehicles using single level inheritance. The base class <code><strong>Vehicle</strong></code> has private member variables <code><strong>make</strong></code>, <code><strong>model</strong></code>, and <code><strong>year</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the vehicle's details. The derived class <code><strong>Car</strong></code> inherits from the <code><strong>Vehicle</strong></code> class and has a private member variable <code><strong>numDoors</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the car's details. The derived class accesses the <code><strong>make</strong></code>, <code><strong>model</strong></code>, and <code><strong>year</strong></code> member variables and <code><strong>printDetails()</strong></code> member function from the base class using inheritance.</p>

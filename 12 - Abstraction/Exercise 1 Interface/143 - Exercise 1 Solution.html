@@ -1,0 +1,56 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the area and perimeter of a rectangle and a circle, respectively, based on the objects that were created.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual double area() = 0;
+    virtual double perimeter() = 0;
+};
+
+class Rectangle : public Shape {
+private:
+    double width, height;
+public:
+    Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+    double area() {
+        return width * height;
+    }
+    double perimeter() {
+        return 2 * (width + height);
+    }
+};
+
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) {
+        radius = r;
+    }
+    double area() {
+        return M_PI * pow(radius, 2);
+    }
+    double perimeter() {
+        return 2 * M_PI * radius;
+    }
+};
+
+int main() {
+    Shape *r = new Rectangle(3, 4);
+    Shape *c = new Circle(5);
+
+    cout &lt;&lt; "Rectangle Area: " &lt;&lt; r-&gt;area() &lt;&lt; endl;
+    cout &lt;&lt; "Rectangle Perimeter: " &lt;&lt; r-&gt;perimeter() &lt;&lt; endl;
+    cout &lt;&lt; "Circle Area: " &lt;&lt; c-&gt;area() &lt;&lt; endl;
+    cout &lt;&lt; "Circle Perimeter: " &lt;&lt; c-&gt;perimeter() &lt;&lt; endl;
+
+    delete r;
+    delete c;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In the example code provided, we define an interface <code><strong>Shape</strong></code> with pure virtual functions <code><strong>area()</strong></code> and <code><strong>perimeter()</strong></code>. We then derive two classes <code><strong>Rectangle</strong></code> and <code><strong>Circle</strong></code> from the <code><strong>Shape</strong></code> interface and implement the virtual functions in each derived class to calculate the area and perimeter of the respective shapes.</p><p>In the main program, we create objects of each class and call the <code><strong>area()</strong></code> and <code><strong>perimeter()</strong></code> functions on each object through a pointer to the base class. Since the <code><strong>Shape</strong></code> class is an interface, it cannot be instantiated, but we can create pointers to the interface and use them to refer to objects of the derived classes. This allows us to achieve abstraction and focus on the behavior of the shapes rather than their implementation details.</p>

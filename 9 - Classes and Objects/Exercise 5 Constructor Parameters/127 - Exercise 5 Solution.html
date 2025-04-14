@@ -1,0 +1,28 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Program to Illustrate Constructor Parameter</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+class Rectangle {
+    private:
+        int length, width;
+    public:
+        Rectangle(int l, int w) {
+            length = l;
+            width = w;
+        }
+        int getLength() {
+            return length;
+        }
+        int getWidth() {
+            return width;
+        }
+        int getArea() {
+            return length * width;
+        }
+};
+
+int main() {
+    Rectangle r(5, 10);
+    cout &lt;&lt; "Area of rectangle: " &lt;&lt; r.getArea() &lt;&lt; endl;
+    return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><p>The class "Rectangle" has two private member variables, length and width, that are initialized in the constructor. The public member functions provide access to these variables and allow the calculation of the area of the rectangle.</p>

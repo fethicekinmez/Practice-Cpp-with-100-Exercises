@@ -1,0 +1,51 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program to sort the contents of a file alphabetically</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    ifstream infile("example.txt");
+
+    if (!infile) {
+        cerr &lt;&lt; "Error: Unable to open file!" &lt;&lt; endl;
+        return 1;
+    }
+
+    string lines[100];
+    int count = 0;
+    string line;
+
+    while (getline(infile, line)) {
+        lines[count++] = line;
+    }
+
+    infile.close();
+
+    for (int i = 0; i &lt; count; i++) {
+        for (int j = i+1; j &lt; count; j++) {
+            if (lines[i] &gt; lines[j]) {
+                string temp = lines[i];
+                lines[i] = lines[j];
+                lines[j] = temp;
+            }
+        }
+    }
+
+    ofstream outfile("example_sorted.txt");
+
+    if (!outfile) {
+        cerr &lt;&lt; "Error: Unable to create file!" &lt;&lt; endl;
+        return 1;
+    }
+
+    for (int i = 0; i &lt; count; i++) {
+        outfile &lt;&lt; lines[i] &lt;&lt; endl;
+    }
+
+    outfile.close();
+
+    cout &lt;&lt; "File sorted successfully." &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program reads the contents of a file named <code><strong>example.txt</strong></code> into an array of strings, sorts the array using nested loops, and writes the sorted lines to a new file named <code><strong>example_sorted.txt</strong></code>. It first opens the input file using the <code><strong>ifstream</strong></code> class and checks if the file was opened successfully. If not, it prints an error message and returns an error code. Otherwise, the program reads the lines of the file into an array of strings using a loop that keeps track of the number of lines read. It then sorts the array of strings using nested loops and closes the input file. Next, it opens the output file using the <code><strong>ofstream</strong></code> class and checks if the file was opened successfully. If not, it prints an error message and returns an error code. Finally, the program writes each line of the sorted array to the output file using another loop and closes the output file. It then prints a message indicating that the file was sorted successfully.</p>

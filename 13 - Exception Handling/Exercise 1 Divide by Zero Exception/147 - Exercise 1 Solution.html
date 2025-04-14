@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should prompt the user to input two integers and then divide the first number by the second number. If the second number is zero, the program should catch the divide-by-zero exception and display an error message to the user.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int num1, num2, result;
+    cout &lt;&lt; "Enter the first number: ";
+    cin &gt;&gt; num1;
+    cout &lt;&lt; "Enter the second number: ";
+    cin &gt;&gt; num2;
+
+    try {
+        if (num2 == 0)
+            throw "Divide by zero error!";
+        result = num1 / num2;
+        cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; endl;
+    }
+    catch (const char* msg) {
+        cerr &lt;&lt; "Exception: " &lt;&lt; msg &lt;&lt; endl;
+    }
+    return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we prompt the user to input two integers and then divide the first number by the second number. If the second number is zero, the program throws a divide-by-zero exception. We use a try-catch block to handle this exception and display an error message to the user.</p>

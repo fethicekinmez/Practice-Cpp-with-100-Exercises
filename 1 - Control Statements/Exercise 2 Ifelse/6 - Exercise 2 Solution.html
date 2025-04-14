@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p>
+<p><strong><u>Exercise for reference: </u></strong>check whether the entered year is a leap year or not?</p>
+<p><br><strong><u>Answer:</u></strong></p>
+<p><br></p>
+<pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+&nbsp; &nbsp; int year;
+&nbsp; &nbsp; cout &lt;&lt; "Enter a year: ";
+&nbsp; &nbsp; cin &gt;&gt; year;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; if (year % 4 == 0 &amp;&amp; year % 100 != 0 || year % 400 == 0) {
+&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; year &lt;&lt; " is a leap year.";
+&nbsp; &nbsp; } else {
+&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; year &lt;&lt; " is not a leap year.";
+&nbsp; &nbsp; }
+&nbsp; &nbsp; return 0;
+}</pre>
+<p><br><strong><u>Explanation:</u></strong></p>
+<p><br></p>
+<ol><li><p>The <code><strong>if</strong></code> statement checks whether the <code><strong>year</strong></code> is a leap year or not. The condition inside the parentheses checks whether the year is divisible by 4 and not divisible by 100, or if it is divisible by 400.</p></li><li><p>If the condition is true, the program outputs a message saying that the <code><strong>year</strong></code> is a leap year using the <code><strong>cout</strong></code> object.</p></li><li><p>If the condition is false, the program outputs a message saying that the <code><strong>year</strong></code> is not a leap year using the <code><strong>cout</strong></code> object.</p></li></ol>

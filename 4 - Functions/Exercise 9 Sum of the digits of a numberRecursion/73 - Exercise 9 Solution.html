@@ -1,0 +1,18 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program that recursively calculates the sum of the digits of a number</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int digitSum(int n) {
+    if (n &lt; 10) {
+        return n;
+    } else {
+        return (n % 10) + digitSum(n / 10);
+    }
+}
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    cout &lt;&lt; "Sum of digits: " &lt;&lt; digitSum(num) &lt;&lt; endl;
+    return 0;
+}</pre><p><br><strong>Explanation:</strong></p><p>Let's say the user enters the number 12345. When the <code><strong>digitSum</strong></code> function is called with this value, it first checks if <code><strong>n</strong></code> is less than 10. Since it is not, the function takes the modulo of <code><strong>n</strong></code> by 10 to get the last digit, which is 5. It then calls <code><strong>digitSum</strong></code> recursively with <code><strong>n/10</strong></code> (which is 1234), gets the sum of the remaining digits (which is 10), and adds it to 5 to get the final result, which is 15.</p>

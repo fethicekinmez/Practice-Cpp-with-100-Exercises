@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>output of this program is the contents of the file displayed on the screen.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    ifstream input_file("filename.txt");
+    string line;
+    
+    if (input_file.is_open()) {
+        while (getline(input_file, line)) {
+            cout &lt;&lt; line &lt;&lt; endl;
+        }
+        input_file.close();
+    } else {
+        cout &lt;&lt; "Unable to open file." &lt;&lt; endl;
+    }
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we use the ifstream class to read the contents of a file. We open the file "filename.txt" using input_file.is_open(). Then we read each line of the file using getline(input_file, line) and display it on the screen using cout &lt;&lt; line &lt;&lt; endl;.</p><p>If the file cannot be opened, we display an error message using cout &lt;&lt; "Unable to open file." &lt;&lt; endl;.</p><p>To use this program, you need to replace "filename.txt" with the name of the file you want to read.</p>

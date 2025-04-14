@@ -1,0 +1,173 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>The program should allow the user to insert, delete, and display elements in the doubly linked list.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+class DoublyLinkedList {
+    private:
+        Node* head;
+        Node* tail;
+    public:
+        DoublyLinkedList() {
+            head = NULL;
+            tail = NULL;
+        }
+        void insertAtBeginning(int val) {
+            Node* newNode = new Node;
+            newNode-&gt;data = val;
+            newNode-&gt;prev = NULL;
+            if (head == NULL) {
+                tail = newNode;
+                newNode-&gt;next = NULL;
+            } else {
+                newNode-&gt;next = head;
+                head-&gt;prev = newNode;
+            }
+            head = newNode;
+            cout &lt;&lt; "Element inserted successfully." &lt;&lt; endl;
+        }
+        void insertAtEnd(int val) {
+            Node* newNode = new Node;
+            newNode-&gt;data = val;
+            newNode-&gt;next = NULL;
+            if (head == NULL) {
+                newNode-&gt;prev = NULL;
+                head = newNode;
+            } else {
+                tail-&gt;next = newNode;
+                newNode-&gt;prev = tail;
+            }
+            tail = newNode;
+            cout &lt;&lt; "Element inserted successfully." &lt;&lt; endl;
+        }
+        void insertAtPosition(int val, int pos) {
+            Node* newNode = new Node;
+            newNode-&gt;data = val;
+            if (head == NULL) {
+                newNode-&gt;prev = NULL;
+                newNode-&gt;next = NULL;
+                head = newNode;
+                tail = newNode;
+                cout &lt;&lt; "Element inserted successfully." &lt;&lt; endl;
+                return;
+            }
+            Node* temp = head;
+            for (int i = 1; i &lt; pos &amp;&amp; temp != NULL; i++) {
+                temp = temp-&gt;next;
+            }
+            if (temp == NULL) {
+                cout &lt;&lt; "Position out of range." &lt;&lt; endl;
+                return;
+            }
+            if (temp == head) {
+                newNode-&gt;prev = NULL;
+                newNode-&gt;next = head;
+                head-&gt;prev = newNode;
+                head = newNode;
+            } else {
+                newNode-&gt;next = temp;
+                newNode-&gt;prev = temp-&gt;prev;
+                temp-&gt;prev-&gt;next = newNode;
+                temp-&gt;prev = newNode;
+            }
+            cout &lt;&lt; "Element inserted successfully." &lt;&lt; endl;
+        }
+        void deleteAtPosition(int pos) {
+            if (head == NULL) {
+                cout &lt;&lt; "List is empty." &lt;&lt; endl;
+               
+            return;
+        }
+        Node* temp = head;
+        for (int i = 1; i &lt; pos &amp;&amp; temp != NULL; i++) {
+            temp = temp-&gt;next;
+        }
+        if (temp == NULL) {
+            cout &lt;&lt; "Position out of range." &lt;&lt; endl;
+            return;
+        }
+        if (temp == head &amp;&amp; temp == tail) {
+            head = NULL;
+            tail = NULL;
+        } else if (temp == head) {
+            head = temp-&gt;next;
+            head-&gt;prev = NULL;
+        } else if (temp == tail) {
+            tail = temp-&gt;prev;
+            tail-&gt;next = NULL;
+        } else {
+            temp-&gt;prev-&gt;next = temp-&gt;next;
+            temp-&gt;next-&gt;prev = temp-&gt;prev;
+        }
+        delete temp;
+        cout &lt;&lt; "Element deleted successfully." &lt;&lt; endl;
+        return;
+    }
+    void display() {
+        if (head == NULL) {
+            cout &lt;&lt; "List is empty." &lt;&lt; endl;
+            return;
+        }
+        cout &lt;&lt; "Doubly Linked List: ";
+        Node* temp = head;
+        while (temp != NULL) {
+            cout &lt;&lt; temp-&gt;data &lt;&lt; " ";
+            temp = temp-&gt;next;
+        }
+        cout &lt;&lt; endl;
+    }
+};
+
+int main() {
+    DoublyLinkedList dll;
+    int choice, value, position;
+    while (true) {
+        cout &lt;&lt; "---- Doubly Linked List Implementation ----" &lt;&lt; endl;
+        cout &lt;&lt; "1. Insert at beginning" &lt;&lt; endl;
+        cout &lt;&lt; "2. Insert at end" &lt;&lt; endl;
+        cout &lt;&lt; "3. Insert at position" &lt;&lt; endl;
+        cout &lt;&lt; "4. Delete at position" &lt;&lt; endl;
+        cout &lt;&lt; "5. Display" &lt;&lt; endl;
+        cout &lt;&lt; "6. Exit" &lt;&lt; endl;
+        cout &lt;&lt; "Enter your choice: ";
+        cin &gt;&gt; choice;
+        switch (choice) {
+            case 1:
+                cout &lt;&lt; "Enter the value to be inserted: ";
+                cin &gt;&gt; value;
+                dll.insertAtBeginning(value);
+                break;
+            case 2:
+                cout &lt;&lt; "Enter the value to be inserted: ";
+                cin &gt;&gt; value;
+                dll.insertAtEnd(value);
+                break;
+            case 3:
+                cout &lt;&lt; "Enter the value to be inserted: ";
+                cin &gt;&gt; value;
+                cout &lt;&lt; "Enter the position to insert: ";
+                cin &gt;&gt; position;
+                dll.insertAtPosition(value, position);
+                break;
+            case 4:
+                cout &lt;&lt; "Enter the position to delete: ";
+                cin &gt;&gt; position;
+                dll.deleteAtPosition(position);
+                break;
+            case 5:
+                dll.display();
+                break;
+            case 6:
+                cout &lt;&lt; "Exiting the program..." &lt;&lt; endl;
+                return 0;
+            default:
+                cout &lt;&lt; "Invalid choice." &lt;&lt; endl;
+        }
+    }
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program starts by defining a <code><strong>Node</strong></code> struct that contains the data value and pointers to the previous and next nodes. A <code><strong>DoublyLinkedList</strong></code> class is then defined that contains a pointer to the head and tail nodes.</p><p>The <code><strong>insertAtBeginning</strong></code> function inserts a new node at the beginning of the list. If the list is empty, the new node becomes both the head and tail. Otherwise, the new node becomes the new head and its <code><strong>next</strong></code> pointer is set to the previous head. The previous head's <code><strong>prev</strong></code> pointer is set to the new node.</p><p>The <code><strong>insertAtEnd</strong></code> function inserts a new node at the end of the list. If the list is empty, the new node becomes both the head and tail. Otherwise, the new node becomes the new tail and its <code><strong>prev</strong></code> pointer is set to the previous tail. The previous tail's <code><strong>next</strong></code> pointer is set to the new node.</p><p>The <code><strong>insertAtPosition</strong></code> function inserts a new node at a specified position in the list. If the specified position is 1, the new node is inserted at the beginning of the list using the <code><strong>insertAtBeginning</strong></code> function. If the specified position is greater than the current size of the list, the new node is inserted at the end of the list using the <code><strong>insertAtEnd</strong></code> function. Otherwise, the list is traversed to find the node at the specified position. The new node's <code><strong>prev</strong></code> pointer is set to the previous node's <code><strong>prev</strong></code> pointer and the new node's <code><strong>next</strong></code> pointer is set to the previous node. The previous node's <code><strong>prev</strong></code> pointer is set to the new node and the previous node's <code><strong>next</strong></code> pointer is set to the new node.</p><p>The <code><strong>deleteAtPosition</strong></code> function deletes a node at a specified position in the list. If the specified position is 1, the head is set to the second node and the new head's <code><strong>prev</strong></code> pointer is set to NULL. If the specified position is equal to the current size of the list, the tail is set to the second-to-last node and the new tail's <code><strong>next</strong></code> pointer is set to NULL. Otherwise, the list is traversed to find the node at the specified position. The previous node's <code><strong>next</strong></code> pointer is set to the next node and the next node's <code><strong>prev</strong></code> pointer is set to the previous node.</p><p>The <code><strong>display</strong></code> function displays all elements in the list. It traverses the list starting from the head and prints each node's data value.</p><p>The <code><strong>main</strong></code> function creates a <code><strong>DoublyLinkedList</strong></code> object and provides a menu for the user to interact with the list. The user can insert nodes at the beginning, end, or a specified position, delete nodes at a specified position, and display the list. The program loops until the user chooses to exit.</p>

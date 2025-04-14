@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program that prompts the user to input a positive integer. Use exception handling to catch the invalid input exception if the user enters a negative integer or a non-integer value, and display an error message to the user.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int num;
+    cout &lt;&lt; "Enter a positive integer: ";
+    cin &gt;&gt; num;
+
+    try {
+        if (num &lt;= 0)
+            throw "Invalid input: Please enter a positive integer.";
+        else if (cin.fail())
+            throw "Invalid input: Please enter an integer.";
+        cout &lt;&lt; "Valid input: " &lt;&lt; num &lt;&lt; endl;
+    }
+    catch (const char* msg) {
+        cerr &lt;&lt; "Exception: " &lt;&lt; msg &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program prompts the user to input a positive integer and uses exception handling to catch invalid input. We first read the input using <code><strong>cin</strong></code>. We then use a try-catch block to catch the exceptions. If the input is less than or equal to zero, we throw an exception with a custom error message. If the input is not an integer, we also throw an exception with a custom error message. If no exception is thrown, we print a message indicating that the input is valid.</p>

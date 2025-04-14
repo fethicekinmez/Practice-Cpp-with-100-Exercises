@@ -1,0 +1,37 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the sound of a dog and a cat, respectively, based on the objects that were created.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    virtual void makeSound() {
+        cout &lt;&lt; "Unknown animal sound" &lt;&lt; endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() {
+        cout &lt;&lt; "Woof!" &lt;&lt; endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() {
+        cout &lt;&lt; "Meow!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Animal *a1 = new Dog();
+    Animal *a2 = new Cat();
+
+    a1-&gt;makeSound();
+    a2-&gt;makeSound();
+
+    delete a1;
+    delete a2;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In the example code provided, we define a base class <code><strong>Animal</strong></code> with a virtual function <code><strong>makeSound()</strong></code>, which outputs a sound that the animal makes. We then derive two classes <code><strong>Dog</strong></code> and <code><strong>Cat</strong></code> from the <code><strong>Animal</strong></code> class and override the <code><strong>makeSound()</strong></code> function in each derived class to output a different sound for each animal.</p><p>In the main program, we create objects of each class and call the <code><strong>makeSound()</strong></code> function on each object through a pointer to the base class. Since the <code><strong>makeSound()</strong></code> function is declared as virtual in the <code><strong>Animal</strong></code> class, the correct version of the function is called at run-time based on the actual type of object being referred to. This is an example of polymorphism using virtual functions.</p>

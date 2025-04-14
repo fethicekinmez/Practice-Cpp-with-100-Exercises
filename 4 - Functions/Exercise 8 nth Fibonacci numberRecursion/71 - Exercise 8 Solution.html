@@ -1,0 +1,20 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference:&nbsp; </strong>program to calculate the nth Fibonacci number using recursion.<br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int fibonacci(int n) {
+   if (n == 0) {
+       return 0;
+   } else if (n == 1) {
+       return 1;
+   } else {
+       return fibonacci(n-1) + fibonacci(n-2);
+   }
+}
+
+int main() {
+   int n;
+   cout &lt;&lt; "Enter a positive integer: ";
+   cin &gt;&gt; n;
+   cout &lt;&lt; "The " &lt;&lt; n &lt;&lt; "th Fibonacci number is " &lt;&lt; fibonacci(n) &lt;&lt; endl;
+   return 0;
+}</pre><p><br><strong>Explanation:</strong></p><p>In this program, we define a function called <code><strong>fibonacci</strong></code> that takes an integer parameter <code><strong>n</strong></code>. If <code><strong>n</strong></code> is 0 or 1, the function returns <code><strong>n</strong></code> (the base cases). Otherwise, the function returns the sum of the <code><strong>n-1</strong></code> and <code><strong>n-2</strong></code> Fibonacci numbers, which are calculated recursively using the <code><strong>fibonacci</strong></code> function.</p>

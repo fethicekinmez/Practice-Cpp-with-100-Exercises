@@ -1,0 +1,47 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Vector class has overloaded the +, -, and * operators to add, subtract, and multiply vectors, respectively.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Vector {
+public:
+    int x, y, z;
+    
+    Vector operator+ (const Vector&amp; other) const {
+        Vector result;
+        result.x = x + other.x;
+        result.y = y + other.y;
+        result.z = z + other.z;
+        return result;
+    }
+    
+    Vector operator- (const Vector&amp; other) const {
+        Vector result;
+        result.x = x - other.x;
+        result.y = y - other.y;
+        result.z = z - other.z;
+        return result;
+    }
+    
+    Vector operator* (const int scalar) const {
+        Vector result;
+        result.x = x * scalar;
+        result.y = y * scalar;
+        result.z = z * scalar;
+        return result;
+    }
+};
+
+int main() {
+    Vector v1 {1, 2, 3};
+    Vector v2 {4, 5, 6};
+    
+    Vector v3 = v1 + v2;
+    Vector v4 = v2 - v1;
+    Vector v5 = v1 * 3;
+    
+    cout &lt;&lt; "v1 + v2 = (" &lt;&lt; v3.x &lt;&lt; ", " &lt;&lt; v3.y &lt;&lt; ", " &lt;&lt; v3.z &lt;&lt; ")\n";
+    cout &lt;&lt; "v2 - v1 = (" &lt;&lt; v4.x &lt;&lt; ", " &lt;&lt; v4.y &lt;&lt; ", " &lt;&lt; v4.z &lt;&lt; ")\n";
+    cout &lt;&lt; "v1 * 3 = (" &lt;&lt; v5.x &lt;&lt; ", " &lt;&lt; v5.y &lt;&lt; ", " &lt;&lt; v5.z &lt;&lt; ")\n";
+    
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program defines a <code><strong>Vector</strong></code> class with <code><strong>x</strong></code>, <code><strong>y</strong></code>, and <code><strong>z</strong></code> components. It then overloads the <code><strong>+</strong></code>, <code><strong>-</strong></code>, and <code><strong>*</strong></code> operators to allow vectors to be added, subtracted, and multiplied by scalars, respectively.</p><p>In the <code><strong>main</strong></code> function, the program creates two <code><strong>Vector</strong></code> objects <code><strong>v1</strong></code> and <code><strong>v2</strong></code>, and then performs the overloaded operations on them to create new <code><strong>Vector</strong></code> objects <code><strong>v3</strong></code>, <code><strong>v4</strong></code>, and <code><strong>v5</strong></code>. The program then prints out the results of these operations.</p>

@@ -1,0 +1,29 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program to check whether a given integer is prime or not.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+   int num;
+   bool isPrime = true;
+
+   cout &lt;&lt; "Enter a positive integer: ";
+   cin &gt;&gt; num;
+
+   for(int i = 2; i &lt;= num / 2; i++)
+   {
+      if(num % i == 0)
+      {
+         isPrime = false;
+         break;
+      }
+   }
+
+   if(isPrime)
+      cout &lt;&lt; num &lt;&lt; " is a prime number";
+   else
+      cout &lt;&lt; num &lt;&lt; " is not a prime number";
+
+   return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>We start by taking the input integer from the user. We then loop through all the numbers from 2 to num/2 (since a number cannot have a factor greater than its half). If any number divides the input integer evenly (i.e. the remainder is 0), then we know that the input integer is not prime. We set the <code><strong>isPrime</strong></code> boolean variable to false and break out of the loop.</p><p>If after the loop, <code><strong>isPrime</strong></code> is still true, then we know that the input integer is prime.</p>

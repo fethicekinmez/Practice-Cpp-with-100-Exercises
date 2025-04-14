@@ -1,0 +1,62 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p>
+<p><strong><u>Exercise for reference: </u></strong>The program should display the name of the month corresponding to the input month number.</p>
+<p><br><strong><u>Answer:</u></strong></p>
+<p><br></p>
+<pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int month;
+
+    // Input month number
+    cout &lt;&lt; "Enter month number (1-12): ";
+    cin &gt;&gt; month;
+
+    // Display month name
+    switch (month) {
+        case 1:
+            cout &lt;&lt; "January" &lt;&lt; endl;
+            break;
+        case 2:
+            cout &lt;&lt; "February" &lt;&lt; endl;
+            break;
+        case 3:
+            cout &lt;&lt; "March" &lt;&lt; endl;
+            break;
+        case 4:
+            cout &lt;&lt; "April" &lt;&lt; endl;
+            break;
+        case 5:
+            cout &lt;&lt; "May" &lt;&lt; endl;
+            break;
+        case 6:
+            cout &lt;&lt; "June" &lt;&lt; endl;
+            break;
+        case 7:
+            cout &lt;&lt; "July" &lt;&lt; endl;
+            break;
+        case 8:
+            cout &lt;&lt; "August" &lt;&lt; endl;
+            break;
+        case 9:
+            cout &lt;&lt; "September" &lt;&lt; endl;
+            break;
+        case 10:
+            cout &lt;&lt; "October" &lt;&lt; endl;
+            break;
+        case 11:
+            cout &lt;&lt; "November" &lt;&lt; endl;
+            break;
+        case 12:
+            cout &lt;&lt; "December" &lt;&lt; endl;
+            break;
+        default:
+            cout &lt;&lt; "Invalid month number" &lt;&lt; endl;
+    }
+
+    return 0;
+}</pre>
+<p><br><strong><u>Explanation:</u></strong></p>
+<p>The program first declares an integer variable <code><strong>month</strong></code> to store the user input. It then prompts the user to enter a month number between 1 and 12 using the <code><strong>cout</strong></code> object and reads the input using the <code><strong>cin</strong></code> object.</p>
+<p>The program then uses a <code><strong>switch</strong></code> statement to match the input month number to its corresponding month name. Each <code><strong>case</strong></code> statement checks whether the <code><strong>month</strong></code> variable matches the value of the month number and outputs the corresponding month name using the <code><strong>cout</strong></code> object. If the <code><strong>month</strong></code> variable does not match any of the <code><strong>case</strong></code> values, the <code><strong>default</strong></code> case is executed and the program outputs an "Invalid month number" message.</p>
+<p>Finally, the program returns 0 to indicate successful execution.</p>

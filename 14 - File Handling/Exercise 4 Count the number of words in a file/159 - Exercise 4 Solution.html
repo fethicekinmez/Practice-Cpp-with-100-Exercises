@@ -1,0 +1,37 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program that counts the number of words in a file</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+    // Open the file
+    string filename;
+    cout &lt;&lt; "Enter the filename: ";
+    cin &gt;&gt; filename;
+    ifstream infile(filename);
+
+    // Check if the file is open
+    if (!infile.is_open())
+    {
+        cout &lt;&lt; "Error opening file." &lt;&lt; endl;
+        return 0;
+    }
+
+    // Count the number of words
+    int count = 0;
+    string word;
+    while (infile &gt;&gt; word)
+    {
+        count++;
+    }
+
+    // Print the number of words
+    cout &lt;&lt; "The file contains " &lt;&lt; count &lt;&lt; " words." &lt;&lt; endl;
+
+    // Close the file
+    infile.close();
+
+    return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><ol><li><p>The program prompts the user to enter the name of the file.</p></li><li><p>The program opens the file using the <code><strong>ifstream</strong></code> class.</p></li><li><p>If the file fails to open, the program displays an error message and exits.</p></li><li><p>The program reads each word in the file using the <code><strong>&gt;&gt;</strong></code> operator.</p></li><li><p>For each word, the program increments a counter.</p></li><li><p>Once the program has read all the words, it prints the number of words.</p></li><li><p>Finally, the program closes the file.</p></li></ol>

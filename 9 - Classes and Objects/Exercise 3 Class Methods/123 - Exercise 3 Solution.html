@@ -1,0 +1,32 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Define a class called <code><strong>Rectangle</strong></code> with two private data members <code><strong>length</strong></code> and <code><strong>width</strong></code>. Define two public methods <code><strong>getArea</strong></code> and <code><strong>getPerimeter</strong></code> to calculate and return the area and perimeter of the rectangle, respectively. Define <code><strong>getArea</strong></code> inside the class definition and <code><strong>getPerimeter</strong></code> outside the class definition..</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+  private:
+    int length;
+    int width;
+
+  public:
+    Rectangle(int l, int w) {
+      length = l;
+      width = w;
+    }
+
+    int getArea() {
+      return length * width;
+    }
+
+    int getPerimeter();
+};
+
+int Rectangle::getPerimeter() {
+  return 2 * (length + width);
+}
+
+int main() {
+  Rectangle rect(4, 5);
+  cout &lt;&lt; "Area: " &lt;&lt; rect.getArea() &lt;&lt; endl;
+  cout &lt;&lt; "Perimeter: " &lt;&lt; rect.getPerimeter() &lt;&lt; endl;
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><ul><li><p>We define a class called <code><strong>Rectangle</strong></code> with two private data members <code><strong>length</strong></code> and <code><strong>width</strong></code>.</p></li><li><p>We define a public constructor to initialize the <code><strong>length</strong></code> and <code><strong>width</strong></code> data members when an object of the <code><strong>Rectangle</strong></code> class is created.</p></li><li><p>We define a public method called <code><strong>getArea</strong></code> inside the class definition to calculate and return the area of the rectangle using the formula <code><strong>length * width</strong></code>.</p></li><li><p>We declare a public method called <code><strong>getPerimeter</strong></code> inside the class definition, but we define it outside of the class definition to calculate and return the perimeter of the rectangle using the formula <code><strong>2 * (length + width)</strong></code>.</p></li><li><p>In the <code><strong>main</strong></code> function, we create an instance of the <code><strong>Rectangle</strong></code> object called <code><strong>rect</strong></code> with <code><strong>length=4</strong></code> and <code><strong>width=5</strong></code>.</p></li><li><p>We call the <code><strong>getArea</strong></code> and <code><strong>getPerimeter</strong></code> methods on the <code><strong>rect</strong></code> object, which calculates and returns the area and perimeter of the rectangle, respectively.</p></li></ul>

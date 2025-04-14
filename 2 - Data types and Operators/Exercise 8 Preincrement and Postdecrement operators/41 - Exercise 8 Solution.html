@@ -1,0 +1,17 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program to demonstrate the use of pre-increment and post-decrement operators</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+  int x = 4, y;
+  y = ++x;
+  cout &lt;&lt; "PreIncrement: Value of x = " &lt;&lt; x &lt;&lt; endl;
+  cout &lt;&lt; "PreIncrement: Value of y = " &lt;&lt; y &lt;&lt; endl;
+
+  y = x--;
+  cout &lt;&lt; "PostDecrement: Value of x = " &lt;&lt; x &lt;&lt; endl;
+  cout &lt;&lt; "PostDecrement: Value of y = " &lt;&lt; y &lt;&lt; endl;
+
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>The program defines two integer variables <code><strong>x</strong></code> and <code><strong>y</strong></code>, with the value of <code><strong>x</strong></code> set to 4. The program then demonstrates the use of the pre-increment and post-decrement operators by performing the following operations:</p><ul><li><p>Pre-increment: <code><strong>y = ++x</strong></code> - the value of <code><strong>x</strong></code> is first incremented by 1, and then assigned to <code><strong>y</strong></code>.</p></li><li><p>Post-decrement: <code><strong>y = x--</strong></code> - the value of <code><strong>x</strong></code> is first assigned to <code><strong>y</strong></code>, and then decremented by 1.</p></li></ul><p>The program outputs the values of <code><strong>x</strong></code> and <code><strong>y</strong></code> before and after each operation.</p>

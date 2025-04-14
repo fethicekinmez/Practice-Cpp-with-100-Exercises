@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference:&nbsp; </strong>program that copies one string into another without using any library functions</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+  char str1[] = "Hello, World!";
+  char str2[100];
+  int i = 0;
+  
+  // copy string1 into string2
+  while (str1[i] != '\0') {
+    str2[i] = str1[i];
+    i++;
+  }
+  str2[i] = '\0';
+  
+  // print both strings
+  cout &lt;&lt; "String 1: " &lt;&lt; str1 &lt;&lt; endl;
+  cout &lt;&lt; "String 2: " &lt;&lt; str2 &lt;&lt; endl;
+  
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p><br></p><ul><li><p>First, we declare two character arrays <code><strong>str1</strong></code> and <code><strong>str2</strong></code>. <code><strong>str1</strong></code> is initialized with the string "Hello, World!" and <code><strong>str2</strong></code> is empty.</p></li><li><p>Next, we declare an integer variable <code><strong>i</strong></code> and initialize it to 0.</p></li><li><p>We then use a <code><strong>while</strong></code> loop to iterate through the characters of <code><strong>str1</strong></code>. Inside the loop, we copy each character from <code><strong>str1</strong></code> to <code><strong>str2</strong></code> at the corresponding index.</p></li><li><p>After the loop, we add a null character <code><strong>\0</strong></code> at the end of <code><strong>str2</strong></code> to terminate the string.</p></li><li><p>Finally, we use the <code><strong>cout</strong></code> statement to print both strings to the console.</p></li></ul>

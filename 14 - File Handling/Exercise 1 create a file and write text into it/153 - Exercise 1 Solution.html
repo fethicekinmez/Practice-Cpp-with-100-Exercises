@@ -1,0 +1,20 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program to create a file and write some text into it.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ofstream outfile;
+    outfile.open("example.txt");
+
+    if (!outfile) {
+        cerr &lt;&lt; "Error: Unable to create file!" &lt;&lt; endl;
+        return 1;
+    }
+
+    outfile &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    outfile.close();
+
+    cout &lt;&lt; "File created and text written successfully." &lt;&lt; endl;
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program creates a file named <code><strong>example.txt</strong></code> and writes the text "Hello, World!" to it. It first creates an <code><strong>ofstream</strong></code> object named <code><strong>outfile</strong></code> and opens the file using the <code><strong>open()</strong></code> function. If the file cannot be opened, the program prints an error message and returns an error code. Otherwise, the program writes the text "Hello, World!" to the file using the <code><strong>&lt;&lt;</strong></code> operator and closes the file using the <code><strong>close()</strong></code> function. Finally, it prints a message indicating that the file was created and the text was written successfully.</p>

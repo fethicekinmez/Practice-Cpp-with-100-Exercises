@@ -1,0 +1,21 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program to generate the Fibonacci series up to n terms.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+
+    cout &lt;&lt; "Enter the number of terms: ";
+    cin &gt;&gt; n;
+
+    cout &lt;&lt; "Fibonacci Series: ";
+
+    for (int i = 1; i &lt;= n; ++i) {
+        cout &lt;&lt; t1 &lt;&lt; ", ";
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+
+    return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>In the above code, we first declare several integer variables to store the input number, the first term, the second term, and the next term.</p><p>We then prompt the user to enter the number of terms, and read the input using <code><strong>cin</strong></code>.</p><p>Next, we output the message "Fibonacci Series: " to indicate the start of the series.</p><p>We then use a <code><strong>for</strong></code> loop to generate the Fibonacci series up to n terms. Inside the loop, we output the current term (which is initially the first term), and then calculate the next term as the sum of the previous two terms. We then update the values of the previous two terms to move to the next term.</p><p>After generating the series, the program terminates.</p>

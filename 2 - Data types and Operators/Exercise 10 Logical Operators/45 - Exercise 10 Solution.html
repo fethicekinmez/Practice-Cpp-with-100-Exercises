@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program uses logical operators to evaluate conditions based on the values of the variables.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+ 
+int main()
+{
+  int a=5, b=3, c=7, d=9;
+ 
+  if(!(a==0))
+     cout&lt;&lt;"a is not zero"&lt;&lt;endl;
+  else
+    cout&lt;&lt;"a is zero"&lt;&lt;endl;
+ 
+  if((a&gt;b)&amp;&amp;(c&lt;d))
+        cout&lt;&lt;"Logical AND is true"&lt;&lt;endl;
+  else
+       cout&lt;&lt;"Logical AND is false"&lt;&lt;endl;
+ 
+  if((a&lt;c)||(b&lt;d))
+     cout&lt;&lt;"Logical OR is true"&lt;&lt;endl;
+  else
+     cout&lt;&lt;"Logical OR is false"&lt;&lt;endl;
+}</pre><p><br><strong>Explanation:</strong></p><p><br></p><ul><li><p>The first condition <code><strong>!(a==0)</strong></code> checks if the value of a is not equal to zero. Since a is 10, the condition is true, and the message "a is not zero" is printed.</p></li><li><p>The second condition <code><strong>(a&gt;b)&amp;&amp;(c&lt;d)</strong></code> checks if both a is greater than b and c is less than d. Since both conditions are true (10 is greater than 8 and 12 is less than 14), the message "Logical AND is true" is printed.</p></li><li><p>The third condition <code><strong>(a&lt;c)||(b&lt;d)</strong></code> checks if either a is less than c or b is less than d. Since both conditions are true, the message "Logical OR is true" is printed.</p></li></ul>

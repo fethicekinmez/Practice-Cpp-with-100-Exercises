@@ -1,0 +1,27 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-52-16-09e96e0d1f1ee654714aa5f1ed66afad.JPG"></p><p><strong>Question: </strong>Write a C++program to Implement a doubly linked list</p><p><br></p><p><strong>Expected output</strong>:</p><p>The program should allow the user to insert, delete, and display elements in the doubly linked list.</p><p><br></p><pre class="prettyprint linenums">---- Doubly Linked List Implementation ----
+1. Insert at beginning
+2. Insert at end
+3. Insert at position
+4. Delete at position
+5. Display
+6. Exit
+Enter your choice: 1
+Enter the value to be inserted: 5
+Element inserted successfully.
+Enter your choice: 2
+Enter the value to be inserted: 7
+Element inserted successfully.
+Enter your choice: 3
+Enter the value to be inserted: 3
+Enter the position to insert: 1
+Element inserted successfully.
+Enter your choice: 5
+Doubly Linked List: 3 5 7
+Enter your choice: 4
+Enter the position to delete: 2
+Element deleted successfully.
+Enter your choice: 5
+Doubly Linked List: 3 7
+Enter your choice: 6
+Exiting the program...
+</pre><figure><img src="https://img-c.udemycdn.com/redactor/2017-01-03_12-37-46-370c6959ad96a30590d3b07d53ae3d3f/Arrrows.bmp"></figure><p><strong>Hint:</strong></p><p>A doubly linked list consists of nodes that have two pointers - one to the next node and one to the previous node. The first node of the list is called the head, and the last node is called the tail.</p><ul><li><p>Make sure to handle edge cases, such as inserting or deleting the first or last element of the list, or attempting to insert or delete at a position that is out of range.</p></li><li><p>When inserting a node, make sure to update the <code><strong>prev</strong></code> and <code><strong>next</strong></code> pointers of the surrounding nodes to maintain the integrity of the list.</p></li><li><p>When deleting a node, make sure to update the <code><strong>prev</strong></code> and <code><strong>next</strong></code> pointers of the surrounding nodes to maintain the integrity of the list.</p></li><li><p>Use a loop to traverse the list when necessary, such as when inserting or deleting at a specific position.</p></li><li><p>Implement a function to display the list in order to verify that your insertions and deletions are working correctly.</p></li></ul>

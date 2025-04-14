@@ -1,0 +1,25 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Define a class called <code><strong>Person</strong></code> with two private data members <code><strong>firstName</strong></code> and <code><strong>lastName</strong></code>. Define a public constructor to initialize these data members when an object of the <code><strong>Person</strong></code> class is created. In the main function, create an instance of the <code><strong>Person</strong></code> class called <code><strong>myPerson</strong></code> with <code><strong>firstName="John"</strong></code> and <code><strong>lastName="Doe"</strong></code>, and print the full name of the person.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person {
+  private:
+     string firstName;
+     string lastName;
+
+  public:
+    Person( string fn,  string ln) {
+      firstName = fn;
+      lastName = ln;
+    }
+
+     string getFullName() {
+      return firstName + " " + lastName;
+    }
+};
+
+int main() {
+  Person myPerson("John", "Doe");
+   cout &lt;&lt; "Full Name: " &lt;&lt; myPerson.getFullName() &lt;&lt;  endl;
+  return 0;
+}</pre><p><br></p><p><strong>Explanation:</strong></p><ul><li><p>We define a class called <code><strong>Person</strong></code> with two private data members <code><strong>firstName</strong></code> and <code><strong>lastName</strong></code>.</p></li><li><p>We define a public constructor to initialize these data members when an object of the <code><strong>Person</strong></code> class is created.</p></li><li><p>In the <code><strong>main</strong></code> function, we create an instance of the <code><strong>Person</strong></code> class called <code><strong>myPerson</strong></code> with <code><strong>firstName="John"</strong></code> and <code><strong>lastName="Doe"</strong></code>.</p></li><li><p>We call the <code><strong>getFullName</strong></code> method on the <code><strong>myPerson</strong></code> object to retrieve the full name of the person.</p></li></ul>

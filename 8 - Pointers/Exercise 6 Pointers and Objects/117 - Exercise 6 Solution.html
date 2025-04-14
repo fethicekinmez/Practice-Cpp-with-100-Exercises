@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the value of the member variable and call the member function of the object using pointers.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class MyClass {
+public:
+    int myVar;
+    void myFunc() {
+        cout &lt;&lt; "Hello from myFunc" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    MyClass obj;
+    obj.myVar = 42;
+    obj.myFunc();
+
+    MyClass *ptr = &amp;obj;
+    cout &lt;&lt; "myVar = " &lt;&lt; ptr-&gt;myVar &lt;&lt; endl;
+    ptr-&gt;myFunc();
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>Pointers in C++ are variables that hold the memory address of another variable. They are used to access and manipulate the data stored in memory. Objects are instances of a class that contain member variables and member functions. Pointers to objects can be used to access the member variables and member functions of the object.</p>

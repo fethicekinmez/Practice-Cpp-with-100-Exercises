@@ -1,0 +1,42 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should display a table of the students' names, ages, and grades entered by the user.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+struct Student {
+    string name;
+    int age;
+    int grade;
+};
+
+int main() {
+    int num_students;
+    cout &lt;&lt; "Enter the number of students: ";
+    cin &gt;&gt; num_students;
+
+    Student students[num_students];
+
+    for (int i = 0; i &lt; num_students; i++) {
+        cout &lt;&lt; "\nEnter the details of student " &lt;&lt; i+1 &lt;&lt; ":\n";
+        cout &lt;&lt; "Name: ";
+        cin &gt;&gt; students[i].name;
+        cout &lt;&lt; "Age: ";
+        cin &gt;&gt; students[i].age;
+        cout &lt;&lt; "Grade: ";
+        cin &gt;&gt; students[i].grade;
+    }
+
+    cout &lt;&lt; "\nTable of student details:\n";
+    cout &lt;&lt; "----------------------------------\n";
+    cout &lt;&lt; "| Name         | Age   | Grade   |\n";
+    cout &lt;&lt; "----------------------------------\n";
+    for (int i = 0; i &lt; num_students; i++) {
+        cout &lt;&lt; "| " &lt;&lt; students[i].name &lt;&lt; "     ";
+        cout &lt;&lt; "| " &lt;&lt; students[i].age &lt;&lt; "    ";
+        cout &lt;&lt; "| " &lt;&lt; students[i].grade &lt;&lt; "      |\n";
+    }
+    cout &lt;&lt; "----------------------------------\n";
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p><br>We use the <code><strong>std</strong></code> namespace and create a <code><strong>struct</strong></code> called <code><strong>Student</strong></code> to store information about each student:</p><p>In the main function, we prompt the user to enter the number of students and create an array of <code><strong>Student</strong></code> structs with the size specified by the user:</p><p>Next, we use a <code><strong>for</strong></code> loop to prompt the user to enter the name, age, and grade of each student and store the information in the corresponding fields of each <code><strong>Student</strong></code> struct in the array:</p><p>Finally, we use another <code><strong>for</strong></code> loop to display the table of student details:</p><p>The output is formatted to display the information in a table with columns for the student's name, age, and grade.</p>

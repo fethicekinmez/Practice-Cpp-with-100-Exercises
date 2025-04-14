@@ -1,0 +1,34 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>program that demonstrates the use of the <code><strong>protected</strong></code> access specifier in inheritance.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Person {
+  protected:
+    string name;
+    int id;
+};
+
+class Employee : public Person {
+  protected:
+    float salary = 60000;
+  
+  public:
+    void setEmployee(string n, int i) {
+      name = n;
+      id = i;
+    }
+  
+    void printEmployee() {
+      cout &lt;&lt; "The employee's name is: " &lt;&lt; name &lt;&lt; endl;
+      cout &lt;&lt; "The employee's ID number is: " &lt;&lt; id &lt;&lt; endl;
+      cout &lt;&lt; "The employee's salary is: $" &lt;&lt; salary &lt;&lt; endl;
+    }
+};
+
+int main() {
+  Employee emp;
+  emp.setEmployee("John", 12345);
+  emp.printEmployee();
+
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The <code><strong>protected</strong></code> access specifier in inheritance allows derived classes to access the protected members of their base classes. This means that the derived class can access the protected members of its own objects as well as the protected members of objects of its base class.</p>

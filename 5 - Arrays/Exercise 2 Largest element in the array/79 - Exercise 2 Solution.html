@@ -1,0 +1,19 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the largest element in the array.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+   int arr[] = {5, 8, 1, 9, 3};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   int maxVal = arr[0];
+
+   for (int i = 1; i &lt; n; i++) {
+      if (arr[i] &gt; maxVal) {
+         maxVal = arr[i];
+      }
+   }
+
+   cout &lt;&lt; "The largest element in the array is: " &lt;&lt; maxVal &lt;&lt; endl;
+
+   return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>To find the largest element in an array of integers, we can initialize a variable to store the maximum value to the first element in the array. Then, we can loop through the array and compare each element to the maximum value, updating the maximum value as necessary. Once we have looped through the entire array, the maximum value variable will contain the largest element.</p>

@@ -1,0 +1,36 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>The program to demonstrates the use of a vector</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+ 
+int main() {
+
+   // create a vector to store int
+   vector&lt;int&gt; vec; 
+   int i;
+
+   // display the original size of vec
+   cout &lt;&lt; "vector size = " &lt;&lt; vec.size() &lt;&lt; endl;
+
+   // push 5 values into the vector
+   for(i = 0; i &lt; 5; i++) {
+      vec.push_back(i);
+   }
+
+   // display extended size of vec
+   cout &lt;&lt; "extended vector size = " &lt;&lt; vec.size() &lt;&lt; endl;
+
+   // access 5 values from the vector
+   for(i = 0; i &lt; 5; i++) {
+      cout &lt;&lt; "value of vec [" &lt;&lt; i &lt;&lt; "] = " &lt;&lt; vec[i] &lt;&lt; endl;
+   }
+
+   // use iterator to access the values
+   vector&lt;int&gt;::iterator v = vec.begin();
+   while( v != vec.end()) {
+      cout &lt;&lt; "value of v = " &lt;&lt; *v &lt;&lt; endl;
+      v++;
+   }
+
+   return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This C++ code demonstrates the use of a vector, which is a dynamic array that can resize itself during runtime.</p><p>The code starts by creating an empty vector of integers using the <code><strong>vector&lt;int&gt; vec</strong></code> syntax. It then displays the size of the vector, which is initially 0, using the <code><strong>vec.size()</strong></code> function.</p><p>Next, the code uses a <code><strong>for</strong></code> loop to add five integer values to the vector using the <code><strong>vec.push_back(i)</strong></code> function.</p><p>After adding the values, the code displays the extended size of the vector, which should now be 5.</p><p>The code then uses two different methods to display the values stored in the vector. First, it uses a <code><strong>for</strong></code> loop to access the values directly using the <code><strong>vec[i]</strong></code> syntax. Second, it uses a <code><strong>while</strong></code> loop and an iterator to access the values indirectly. The <code><strong>vector&lt;int&gt;::iterator v = vec.begin()</strong></code> syntax creates an iterator that points to the beginning of the vector, and the <code><strong>v != vec.end()</strong></code> condition checks if the iterator has reached the end of the vector. The <code><strong>*v</strong></code> syntax dereferences the iterator and retrieves the value stored at the current position.</p>

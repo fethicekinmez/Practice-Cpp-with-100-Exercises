@@ -1,0 +1,16 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program to use bitwise operators left shift and right shift.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int num = 10;
+  cout &lt;&lt; "Original Number: " &lt;&lt; num &lt;&lt; endl;
+  
+  num = num &lt;&lt; 2;
+  cout &lt;&lt; "Number after left shift: " &lt;&lt; num &lt;&lt; endl;
+  
+  num = num &gt;&gt; 3;
+  cout &lt;&lt; "Number after right shift: " &lt;&lt; num &lt;&lt; endl;
+
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>In the above code, we have initialized a variable <code><strong>num</strong></code> with the value of 10. We then print the original value of the number.</p><p>Next, we perform a left shift operation on the number by 2 positions, which means we shift the bits of the number to the left by 2 positions. The new value of <code><strong>num</strong></code> is then printed.</p><p>Finally, we perform a right shift operation on the number by 3 positions, which means we shift the bits of the number to the right by 3 positions. The new value of <code><strong>num</strong></code> is then printed.</p>

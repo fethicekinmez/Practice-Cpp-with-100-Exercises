@@ -1,0 +1,43 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Create a C++ program that demonstrates multilevel inheritance using a class hierarchy of animals</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+  protected:
+    string name;
+    string species;
+  public:
+    Animal(string nm, string sp) {
+      name = nm;
+      species = sp;
+    }
+    void printDetails() {
+      cout &lt;&lt; "Animal Details:\n";
+      cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+      cout &lt;&lt; "Species: " &lt;&lt; species &lt;&lt; endl;
+    }
+};
+
+class Mammal: public Animal {
+  private:
+    int numLegs;
+  public:
+    Mammal(string nm, string sp, int legs): Animal(nm, sp) {
+      numLegs = legs;
+    }
+    void printDetails() {
+      Animal::printDetails();
+      cout &lt;&lt; "\nMammal Details:\n";
+      cout &lt;&lt; "Number of Legs: " &lt;&lt; numLegs &lt;&lt; endl;
+    }
+};
+
+class Dog: public Mammal {
+  private:
+    string breed;
+  public:
+    Dog(string nm, int legs, string brd): Mammal(nm, "Dog", legs) {
+      breed = brd;
+    }
+    void printDetails() {
+      Mammal
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program creates a class hierarchy of animals using multilevel inheritance. The base class <code><strong>Animal</strong></code> has private member variables <code><strong>name</strong></code> and <code><strong>species</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the animal's details. The derived class <code><strong>Mammal</strong></code> inherits from the <code><strong>Animal</strong></code> class and has a private member variable <code><strong>numLegs</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the mammal's details. The derived class <code><strong>Dog</strong></code> inherits from the <code><strong>Mammal</strong></code> class and has a private member variable <code><strong>breed</strong></code>, and a public member function <code><strong>printDetails()</strong></code> for printing the dog's details. The derived classes access the <code><strong>name</strong></code>, <code><strong>species</strong></code>, and <code><strong>printDetails()</strong></code> member function from the base class using multilevel inheritance.</p>

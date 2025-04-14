@@ -1,0 +1,21 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program that recursively reverses a string</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void reverseString(string&amp; str, int start, int end) {
+    if (start &gt;= end) {
+        return;
+    }
+    swap(str[start], str[end]);
+    reverseString(str, start + 1, end - 1);
+}
+
+int main() {
+    string str;
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, str);
+    reverseString(str, 0, str.length() - 1);
+    cout &lt;&lt; "Reversed string: " &lt;&lt; str &lt;&lt; endl;
+    return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>Let's say the user enters the string "Hello, world!". When the <code><strong>reverseString</strong></code> function is called with this string and the starting index 0 and ending index 12 (which is the index of the last character in the string), it first checks if the starting index is greater than or equal to the ending index. Since it is not, the function swaps the characters at indices 0 and 12, resulting in the string "!ello, worldH". It then calls <code><strong>reverseString</strong></code> recursively with the starting index increased by 1 (which is now 1) and the ending index decreased by 1 (which is now 11), and continues this process until the entire string is reversed.</p>

@@ -1,0 +1,101 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>program to implement a queue using a linked list.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+class Queue {
+    private:
+        Node* front;
+        Node* rear;
+    public:
+        Queue() {
+            front = NULL;
+            rear = NULL;
+        }
+        void enqueue(int val) {
+            Node* newNode = new Node;
+            newNode-&gt;data = val;
+            newNode-&gt;next = NULL;
+            if (front == NULL) {
+                front = newNode;
+                rear = newNode;
+            } else {
+                rear-&gt;next = newNode;
+                rear = newNode;
+            }
+            cout &lt;&lt; "Element enqueued successfully." &lt;&lt; endl;
+        }
+        void dequeue() {
+            if (front == NULL) {
+                cout &lt;&lt; "Queue is empty." &lt;&lt; endl;
+                return;
+            }
+            Node* temp = front;
+            front = front-&gt;next;
+            if (front == NULL) {
+                rear = NULL;
+            }
+            delete temp;
+            cout &lt;&lt; "Element dequeued successfully." &lt;&lt; endl;
+        }
+        void display() {
+            if (front == NULL) {
+                cout &lt;&lt; "Queue is empty." &lt;&lt; endl;
+                return;
+            }
+            Node* temp = front;
+            cout &lt;&lt; "Queue: ";
+            while (temp != NULL) {
+                cout &lt;&lt; temp-&gt;data &lt;&lt; " ";
+                temp = temp-&gt;next;
+            }
+            cout &lt;&lt; endl;
+        }
+        ~Queue() {
+            Node* temp = front;
+            while (temp != NULL) {
+                Node* next = temp-&gt;next;
+                delete temp;
+                temp = next;
+            }
+        }
+};
+
+int main() {
+    Queue q;
+    int choice, val;
+    cout &lt;&lt; "---- Queue using Linked List ----" &lt;&lt; endl;
+    cout &lt;&lt; "1. Enqueue" &lt;&lt; endl;
+    cout &lt;&lt; "2. Dequeue" &lt;&lt; endl;
+    cout &lt;&lt; "3. Display" &lt;&lt; endl;
+    cout &lt;&lt; "4. Exit" &lt;&lt; endl;
+    do {
+        cout &lt;&lt; "\nEnter your choice: ";
+        cin &gt;&gt; choice;
+        switch (choice) {
+            case 1:
+                cout &lt;&lt; "\nEnter the value to be enqueued: ";
+                cin &gt;&gt; val;
+                q.enqueue(val);
+                break;
+            case 2:
+                q.dequeue();
+                break;
+            case 3:
+                q.display();
+                break;
+            case 4:
+                cout &lt;&lt; "\nExiting the program..." &lt;&lt; endl;
+                break;
+            default:
+                cout &lt;&lt; "\nInvalid choice. Please try again." &lt;&lt; endl;
+                break;
+        }
+    } while (choice != 4);
+    return 0;
+}
+
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program defines a <code><strong>Queue</strong></code> class that contains methods for enqueueing, dequeuing, and displaying elements of the queue. It also defines a <code><strong>Node</strong></code> structure to represent individual nodes in the linked list. In the <code><strong>main()</strong></code> function, a menu is displayed to the user allowing them to interact with the queue. The program uses a <code><strong>do-while</strong></code> loop to repeatedly prompt the user for input until they choose to exit the program.</p>

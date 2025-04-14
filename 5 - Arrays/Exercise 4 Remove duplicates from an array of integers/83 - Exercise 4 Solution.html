@@ -1,0 +1,29 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program to remove duplicates from an array of integers</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = i + 1; j &lt; n; j++) {
+            if (arr[i] == arr[j]) {
+                // Shift the elements to the left
+                for (int k = j; k &lt; n - 1; k++) {
+                    arr[k] = arr[k + 1];
+                }
+                n--;  // Decrement array size
+                j--;  // Adjust inner loop index
+            }
+        }
+    }
+
+    cout &lt;&lt; "Array after removing duplicates: ";
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+
+    return 0;
+}</pre><p><br><strong>Explanation:</strong></p><ul><li><p>In this program, we define an array of integers and find its size.</p></li><li><p>We then use two nested loops to compare each pair of elements in the array.</p></li><li><p>If we find a duplicate, we shift the elements to the left starting from the duplicate element.</p></li><li><p>We then decrement the array size to reflect the fact that we've removed an element.</p></li><li><p>We also adjust the index of the inner loop to account for the shifted elements.</p></li><li><p>Finally, we iterate through the array and print out its elements to verify that duplicates have been removed.</p></li></ul>

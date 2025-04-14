@@ -1,0 +1,35 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p>
+<p><strong><u>Exercise for reference: </u></strong>Uses nested if statements to find the largest among three.</p>
+<p><br><strong><u>Answer:</u></strong></p>
+<p><br></p>
+<pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    // take input from the user
+    int num1, num2, num3;
+    cout &lt;&lt; "Enter three numbers: "&lt;&lt;endl;
+    cin &gt;&gt; num1 &gt;&gt; num2 &gt;&gt; num3;
+
+    // check which number is largest using nested if statements
+    if (num1 &gt;= num2) {
+        if (num1 &gt;= num3) {
+            cout &lt;&lt; num1 &lt;&lt; " is the largest number";
+        } else {
+            cout &lt;&lt; num3 &lt;&lt; " is the largest number";
+        }
+    } else {
+        if (num2 &gt;= num3) {
+            cout &lt;&lt; num2 &lt;&lt; " is the largest number";
+        } else {
+            cout &lt;&lt; num3 &lt;&lt; " is the largest number";
+        }
+    }
+
+    return 0;
+}</pre>
+<p><br></p>
+<p><strong><u>Explanation:</u></strong></p>
+<p><br></p>
+<ol><li><p>First, the program declares three variables <code><strong>num1</strong></code>, <code><strong>num2</strong></code>, and <code><strong>num3</strong></code> to store the three input numbers.</p></li><li><p>The program then uses the <code><strong>cin</strong></code> function to take input from the user for the three numbers and stores them in the variables.</p></li><li><p>The program then uses nested if statements to compare the three numbers and determine which one is the largest.</p></li><li><p>The first if statement compares <code><strong>num1</strong></code> and <code><strong>num2</strong></code>. If <code><strong>num1</strong></code> is greater than or equal to <code><strong>num2</strong></code>, it enters the nested if statement. Otherwise, it enters the else block.</p></li><li><p>In the nested if statement, the program checks if <code><strong>num1</strong></code> is greater than or equal to <code><strong>num3</strong></code>. If it is, then <code><strong>num1</strong></code> is the largest number. Otherwise, <code><strong>num3</strong></code> is the largest number.</p></li><li><p>If the first if statement determines that <code><strong>num2</strong></code> is greater than <code><strong>num1</strong></code>, then the else block is entered. In this block, the program checks if <code><strong>num2</strong></code> is greater than or equal to <code><strong>num3</strong></code>. If it is, then <code><strong>num2</strong></code> is the largest number. Otherwise, <code><strong>num3</strong></code> is the largest number.</p></li><li><p>Finally, the program outputs the largest number using the <code><strong>cout</strong></code> function.</p></li></ol>

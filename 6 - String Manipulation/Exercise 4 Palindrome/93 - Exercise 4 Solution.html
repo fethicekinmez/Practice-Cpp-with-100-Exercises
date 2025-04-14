@@ -1,0 +1,29 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that checks whether an entered string is a palindrome or not</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+  string str;
+  cout &lt;&lt; "Enter a string: ";
+  cin &gt;&gt; str;
+  
+  int length = str.length();
+  bool is_palindrome = true;
+  
+  for (int i = 0; i &lt; length / 2; i++) {
+    if (str[i] != str[length - 1 - i]) {
+      is_palindrome = false;
+      break;
+    }
+  }
+  
+  if (is_palindrome) {
+    cout &lt;&lt; str &lt;&lt; " is a palindrome." &lt;&lt; endl;
+  } else {
+    cout &lt;&lt; str &lt;&lt; " is not a palindrome." &lt;&lt; endl;
+  }
+  
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p><br></p><ul><li><p>First, we declare a string variable <code><strong>str</strong></code> and ask the user to enter a string using the <code><strong>cin</strong></code> statement.</p></li><li><p>We then use the <code><strong>length</strong></code> function to find the length of the string and store it in the <code><strong>length</strong></code> variable.</p></li><li><p>We declare a boolean variable <code><strong>is_palindrome</strong></code> and initialize it to <code><strong>true</strong></code>.</p></li><li><p>We then use a <code><strong>for</strong></code> loop to compare the first character of the string with the last character, the second character with the second-last character, and so on, until the middle of the string is reached. If the characters do not match, we set <code><strong>is_palindrome</strong></code> to <code><strong>false</strong></code> and break out of the loop.</p></li><li><p>Finally, we use an <code><strong>if</strong></code> statement to check the value of <code><strong>is_palindrome</strong></code> and print the appropriate message to the console.</p></li></ul>

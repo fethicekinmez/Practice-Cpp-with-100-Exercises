@@ -1,0 +1,17 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>Program to find the sum of all elements in an array of integers.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int arr[] = {1, 2, 3, 4, 5};
+  int n = sizeof(arr)/sizeof(arr[0]);
+  int sum = 0;
+
+  for(int i = 0; i &lt; n; i++) {
+    sum += arr[i];
+  }
+
+  cout &lt;&lt; "The sum of the array is: " &lt;&lt; sum &lt;&lt; endl;
+
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>In this program, we first initialize an integer array <code><strong>arr</strong></code> with 5 elements. We then use the <code><strong>sizeof()</strong></code> function to find the number of elements in the array and store it in the integer variable <code><strong>n</strong></code>. We also initialize an integer variable <code><strong>sum</strong></code> to 0, which will be used to accumulate the sum of all the elements in the array.</p><p>Next, we use a for loop to iterate over all the elements in the array. Inside the loop, we add the current element of the array to the <code><strong>sum</strong></code> variable. Once the loop is complete, we output the value of <code><strong>sum</strong></code> to the console.</p>

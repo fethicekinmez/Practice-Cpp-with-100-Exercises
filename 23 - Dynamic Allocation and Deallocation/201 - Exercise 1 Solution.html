@@ -1,0 +1,52 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>Modify the code to allocate and deallocate memory for an array of doubles.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+ 
+int main ()
+{
+    // Pointer initialization to null
+    double* p = NULL;
+ 
+    // Request memory for the variable
+    // using new operator
+    p = new(nothrow) double;
+    if (!p)
+        cout &lt;&lt; "allocation of memory failed\n";
+    else
+    {
+        // Store value at allocated address
+        *p = 13;
+        cout &lt;&lt; "Value of p: " &lt;&lt; *p &lt;&lt; endl;
+    }
+ 
+    // Request block of memory
+    // using new operator
+    double *r = new double(75.25);
+ 
+    cout &lt;&lt; "Value of r: " &lt;&lt; *r &lt;&lt; endl;
+ 
+    // Request block of memory of size n
+    int n = 5;
+    double *q = new(nothrow) double[n];
+ 
+    if (!q)
+        cout &lt;&lt; "allocation of memory failed\n";
+    else
+    {
+        for (int i = 0; i &lt; n; i++)
+            q[i] = i+1;
+ 
+        cout &lt;&lt; "Value stored in block of memory: ";
+        for (int i = 0; i &lt; n; i++)
+            cout &lt;&lt; q[i] &lt;&lt; " ";
+    }
+ 
+    // freed the allocated memory
+    delete p;
+    delete r;
+ 
+    // freed the block of allocated memory
+    delete[] q;
+ 
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program initializes a double pointer <code><strong>p</strong></code> to NULL and then requests memory for a double variable using the <code><strong>new</strong></code> operator. If the memory allocation is successful, it stores a value of 13 in the allocated memory location and prints the value of <code><strong>p</strong></code>. It then requests memory for a float variable <code><strong>r</strong></code> using the <code><strong>new</strong></code> operator and initializes its value to 75.25. It also requests a block of memory for an array of double variables using the <code><strong>new</strong></code> operator and the array size <code><strong>n</strong></code>. If the memory allocation is successful, it stores values in the allocated memory locations and prints the array values. Finally, the program deallocates the dynamically allocated memory using the <code><strong>delete</strong></code> and <code><strong>delete[]</strong></code> operators for single variables and arrays respectively.</p>

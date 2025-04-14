@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should prompt the user to enter two numbers and then display their sum.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;    
+using namespace std;    
+class Sum    
+{    
+private:
+    int x, y, z; // private variables  
+public:    
+    void add()    
+    {    
+        cout&lt;&lt;"Enter two numbers: ";    
+        cin&gt;&gt;x&gt;&gt;y;    
+        z = x + y;    
+        cout&lt;&lt;"Sum of two number is: "&lt;&lt;z&lt;&lt;endl;    
+    }    
+};    
+
+int main()    
+{    
+    Sum sm;    
+    sm.add();    
+    return 0;    
+}  
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we define a class called Sum that has three private variables x, y, and z. The add() method is a public member function of the Sum class that allows the user to input two numbers x and y and then computes their sum, which is stored in the variable z. The main() function creates an object of the Sum class called sm and calls the add() method of the object.</p>

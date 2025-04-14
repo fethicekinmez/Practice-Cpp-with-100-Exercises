@@ -1,0 +1,37 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program that takes two integers as input and performs basic arithmetic operations on them using separate functions.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int divide(int a, int b) {
+    return a / b;
+}
+
+int main() {
+    int num1, num2;
+
+    cout &lt;&lt; "Enter the first integer: ";
+    cin &gt;&gt; num1;
+
+    cout &lt;&lt; "Enter the second integer: ";
+    cin &gt;&gt; num2;
+
+    cout &lt;&lt; "The sum is: " &lt;&lt; add(num1, num2) &lt;&lt; endl;
+    cout &lt;&lt; "The difference is: " &lt;&lt; subtract(num1, num2) &lt;&lt; endl;
+    cout &lt;&lt; "The product is: " &lt;&lt; multiply(num1, num2) &lt;&lt; endl;
+    cout &lt;&lt; "The quotient is: " &lt;&lt; divide(num1, num2) &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>Here's a breakdown of the program:</p><ol><li><p>First, the program includes the necessary header files (<code><strong>iostream</strong></code>) and uses the <code><strong>using namespace std</strong></code> statement to simplify the code.</p></li><li><p>Next, the program defines four separate functions to perform the arithmetic operations: <code><strong>add()</strong></code>, <code><strong>subtract()</strong></code>, <code><strong>multiply()</strong></code>, and <code><strong>divide()</strong></code>. Each function takes two integer parameters and returns the result of the operation.</p></li><li><p>The <code><strong>main()</strong></code> function prompts the user to enter two integers using the <code><strong>cout</strong></code> and <code><strong>cin</strong></code> statements, then calls each of the four arithmetic functions with the user-inputted integers and displays the result using the <code><strong>cout</strong></code> statement.</p></li><li><p>The program ends with the <code><strong>return 0</strong></code> statement, which signals to the operating system that the program has executed successfully.</p></li></ol><p>By breaking the program down into separate functions for each arithmetic operation, the code becomes more modular and easier to read and understand. Additionally, this approach makes it easy to modify or extend the program in the future, such as by adding additional arithmetic operations.</p>

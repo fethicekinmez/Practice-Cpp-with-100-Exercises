@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>C++ program to find the average of three numbers.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+   float num1, num2, num3, average;
+
+   cout &lt;&lt; "Enter first number: ";
+   cin &gt;&gt; num1;
+
+   cout &lt;&lt; "Enter second number: ";
+   cin &gt;&gt; num2;
+
+   cout &lt;&lt; "Enter third number: ";
+   cin &gt;&gt; num3;
+
+   // Calculate average
+   average = (num1 + num2 + num3) / 3;
+
+   cout &lt;&lt; "Average = " &lt;&lt; average;
+
+   return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><ol><li><p>We use the <code><strong>cout</strong></code> statement to display a message asking the user to enter the first number, and the <code><strong>cin</strong></code> statement to read the user's input from the console and store it in the <code><strong>num1</strong></code> variable. We do the same for the second and third numbers, using the <code><strong>cout</strong></code> and <code><strong>cin</strong></code> statements to display messages and read input from the user.</p></li><li><p>The next line of code calculates the average of the three numbers using the formula <code><strong>(num1 + num2 + num3) / 3</strong></code>. We store the result in the <code><strong>average</strong></code> variable.</p></li><li><p>Finally, we use the <code><strong>cout</strong></code> statement to display the average to the user.</p></li></ol>

@@ -1,0 +1,20 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>Define a class called "Person" that has two attributes: "name" (a string) and "age" (an integer). In the main function, create an object of the "Person" class, set the values for the attributes, and print them out.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+class Person {
+  public:
+    string name;
+    int age;
+};
+
+int main() {
+  Person myPerson;
+  myPerson.name = "John";
+  myPerson.age = 25;
+  cout &lt;&lt; myPerson.name &lt;&lt; endl;
+  cout &lt;&lt; myPerson.age &lt;&lt; endl;
+  return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program defines a class called "Person" with two attributes: "name" (a string) and "age" (an integer). The main function creates an object of the "Person" class, sets the values for the attributes, and then prints them out using the dot notation to access the attributes of the object.</p>

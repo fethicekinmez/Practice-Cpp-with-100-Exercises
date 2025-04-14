@@ -1,0 +1,39 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that demonstrates string manipulation using library functions:</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+  string str = "Hello, World!";
+  
+  // print the original string
+  cout &lt;&lt; "Original string: " &lt;&lt; str &lt;&lt; endl;
+  
+  // get the length of the string
+  int length = str.length();
+  cout &lt;&lt; "Length of the string: " &lt;&lt; length &lt;&lt; endl;
+  
+  // convert the string to uppercase
+  for (int i = 0; i &lt; length; i++) {
+    str[i] = toupper(str[i]);
+  }
+  cout &lt;&lt; "Uppercase string: " &lt;&lt; str &lt;&lt; endl;
+  
+  // convert the string to lowercase
+  for (int i = 0; i &lt; length; i++) {
+    str[i] = tolower(str[i]);
+  }
+  cout &lt;&lt; "Lowercase string: " &lt;&lt; str &lt;&lt; endl;
+  
+  // find the position of a character in the string
+  char search_char = 'o';
+  size_t pos = str.find(search_char);
+  if (pos != string::npos) {
+    cout &lt;&lt; "Position of character '" &lt;&lt; search_char &lt;&lt; "' in string: " &lt;&lt; pos &lt;&lt; endl;
+  } else {
+    cout &lt;&lt; "Character not found in string." &lt;&lt; endl;
+  }
+  
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><ul><li><p>First, we declare a string variable <code><strong>str</strong></code> and initialize it with the string "Hello, World!".</p></li><li><p>Next, we use the <code><strong>cout</strong></code> statement to print the original string to the console.</p></li><li><p>We then use the <code><strong>length</strong></code> function to find the length of the string and print it to the console.</p></li><li><p>Next, we use a <code><strong>for</strong></code> loop to convert the string to uppercase using the <code><strong>toupper</strong></code> function and print it to the console.</p></li><li><p>We then use another <code><strong>for</strong></code> loop to convert the string back to lowercase using the <code><strong>tolower</strong></code> function and print it to the console.</p></li><li><p>Finally, we use the <code><strong>find</strong></code> function to find the position of the character 'o' in the string and print it to the console.</p></li></ul>

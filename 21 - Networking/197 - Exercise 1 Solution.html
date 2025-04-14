@@ -1,0 +1,94 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>The client should send a message to the server and receive a response message from the server.</p><p><strong>Answer:</strong></p><p><strong>Server side code:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;unistd.h&gt;
+
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+    int socket_fd, client_fd;
+    struct sockaddr_in server_addr, client_addr;
+    char buffer[1024] = {0};
+    const char *response = "Message received!";
+
+    // Create socket file descriptor
+    if ((socket_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        perror("socket failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Bind socket to localhost:8080
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    server_addr.sin_port = htons(8080);
+
+    if (bind(socket_fd, (struct sockaddr *)&amp;server_addr, sizeof(server_addr)) &lt; 0) {
+        perror("bind failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Listen for incoming connections
+    if (listen(socket_fd, 3) &lt; 0) {
+        perror("listen failed");
+        exit(EXIT_FAILURE);
+    }
+
+    cout &lt;&lt; "Waiting for incoming connections..." &lt;&lt; endl;
+
+    // Accept incoming connections
+    socklen_t client_addr_len = sizeof(client_addr);
+    if ((client_fd = accept(socket_fd, (struct sockaddr *)&amp;client_addr, &amp;client_addr_len)) &lt; 0) {
+        perror("accept failed");
+        exit(EXIT_FAILURE);
+    }
+
+    cout &lt;&lt; "Client connected." &lt;&lt; endl;
+
+    // Receive message from client
+    int message_len;
+    if ((message_len = recv(client_fd, buffer, 1024, 0)) == -1) {
+        perror("recv failed");
+        exit(EXIT_FAILURE);
+    }
+
+    buffer[message_len] = '\0';
+    cout &lt;&lt; "Message received from client: " &lt;&lt; buffer &lt;&lt; endl;
+
+    // Send response to client
+    if (send(client_fd, response, strlen(response), 0) == -1) {
+        perror("send failed");
+        exit(EXIT_FAILURE);
+    }
+
+    close(client_fd);
+    close(socket_fd);
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Client side code:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;unistd.h&gt;
+
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+    int socket_fd;
+    struct sockaddr_in server_addr;
+    char buffer[1024] = {0};
+    const char *message = "Hello, server!";
+
+    // Create socket file descriptor
+    if ((socket_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        perror("socket failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Connect to server at localhost:8080
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(8080);
+
+    if (inet_pton(AF_INET, "127.0.0.1", &amp;server_addr.sin
+</pre><p><strong>Explanation:</strong></p><p>This program demonstrates the basic use of sockets in C++ for implementing a simple client-server communication. The server listens for incoming client connections and once a connection is established, it receives data from the client and sends back a response.</p><p>The server is implemented using socket(), bind(), listen(), accept() and recv() functions from the socket library. The client is implemented using socket(), connect() and send() functions.</p><p>The server listens on a specified port number and accepts incoming connections from clients. When a connection is established, the server receives data from the client using recv() function and sends back a response using send() function.</p><p>The client establishes a connection to the server using connect() function and sends data to the server using send() function.</p><p>Overall, this program provides a basic understanding of how sockets can be used for implementing client-server communication in C++.</p><p><br></p>

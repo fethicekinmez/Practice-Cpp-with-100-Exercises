@@ -1,0 +1,33 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>he program demonstrates the use of <code><strong>unique_ptr</strong></code></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;memory&gt;
+ 
+class Rectangle {
+    int length;
+    int breadth;
+ 
+public:
+    Rectangle(int l, int b){
+        length = l;
+        breadth = b;
+    }
+ 
+    int area(){
+        return length * breadth;
+    }
+};
+ 
+int main(){
+ 
+    std::unique_ptr&lt;Rectangle&gt; P1(new Rectangle(10, 5));
+    std::cout &lt;&lt; P1-&gt;area() &lt;&lt; std::endl; // This'll print 50
+ 
+    std::unique_ptr&lt;Rectangle&gt; P2;
+    P2 = std::move(P1);
+ 
+    // This'll print 50
+    std::cout &lt;&lt; P2-&gt;area() &lt;&lt; std::endl;
+ 
+    // std::cout&lt;&lt;P1-&gt;area()&lt;&lt;std::endl; // this will give an error since P1 is now a null pointer
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>The program creates two instances of the <code><strong>Rectangle</strong></code> class using <code><strong>unique_ptr</strong></code>. The first instance is created with <code><strong>P1</strong></code> and the second instance is created with <code><strong>P2</strong></code>. The <code><strong>area()</strong></code> function calculates and returns the area of the rectangle. The program first prints out the area of the first rectangle using the <code><strong>P1</strong></code> pointer. Then, it transfers ownership of the first rectangle to the <code><strong>P2</strong></code> pointer using the <code><strong>move</strong></code> function. Finally, it prints out the area of the second rectangle using the <code><strong>P2</strong></code> pointer. Since the ownership of the first rectangle has been transferred to <code><strong>P2</strong></code>, attempting to print out the area using <code><strong>P1</strong></code> would give a null pointer error.</p>

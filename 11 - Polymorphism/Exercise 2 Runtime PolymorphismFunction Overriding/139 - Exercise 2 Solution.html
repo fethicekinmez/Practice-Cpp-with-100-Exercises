@@ -1,0 +1,54 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></p><p><strong>Exercise for reference: </strong>The program should output the area of a circle and a rectangle, respectively, based on the dimensions of the shapes that were created.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual float area() {
+        return 0;
+    }
+};
+
+class Circle : public Shape {
+private:
+    float radius;
+public:
+    Circle(float r) {
+        radius = r;
+    }
+    float area() {
+        return M_PI * radius * radius;
+    }
+};
+
+class Rectangle : public Shape {
+private:
+    float length, width;
+public:
+    Rectangle(float l, float w) {
+        length = l;
+        width = w;
+    }
+    float area() {
+        return length * width;
+    }
+};
+
+int main() {
+    float radius, length, width;
+
+    cout &lt;&lt; "Enter radius of the circle: ";
+    cin &gt;&gt; radius;
+
+    cout &lt;&lt; "Enter length and width of the rectangle: ";
+    cin &gt;&gt; length &gt;&gt; width;
+
+    Circle c(radius);
+    Rectangle r(length, width);
+
+    cout &lt;&lt; "Area of the circle: " &lt;&lt; c.area() &lt;&lt; endl;
+    cout &lt;&lt; "Area of the rectangle: " &lt;&lt; r.area() &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In the example code provided, we define a base class <code><strong>Shape</strong></code> with a virtual function <code><strong>area()</strong></code>, which returns the area of a shape. We then derive two classes <code><strong>Circle</strong></code> and <code><strong>Rectangle</strong></code> from the <code><strong>Shape</strong></code> class and implement the <code><strong>area()</strong></code> function in each derived class.</p><p>In the main program, we create objects of each class and call the <code><strong>area()</strong></code> function on each object. Since the <code><strong>area()</strong></code> function is declared as virtual in the <code><strong>Shape</strong></code> class and is overridden in the derived classes, the correct version of the function is called at run-time based on the actual type of object being referred to. This is an example of run-time polymorphism.</p>

@@ -1,0 +1,16 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>Define a new data type named "Temp" using the typedef keyword that is an alias for the data type double. Write a program that declares two variables of type Temp named temp1 and temp2, and initializes them with the values 25.5 and 32.0, respectively. Calculate the average temperature of temp1 and temp2 and store it in a variable named avgTemp. Finally, print out the values of temp1, temp2, and avgTemp</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+typedef double Temp;
+
+int main() {
+    Temp temp1 = 25.5;
+    Temp temp2 = 32.0;
+    Temp avgTemp = (temp1 + temp2) / 2.0;
+
+    std::cout &lt;&lt; "Temperature 1: " &lt;&lt; temp1 &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Temperature 2: " &lt;&lt; temp2 &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Average Temperature: " &lt;&lt; avgTemp &lt;&lt; std::endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this exercise, we are using typedef to define a new data type named Temp that is an alias for the data type double. We then declare two variables of type Temp named temp1 and temp2, and initialize them with the values 25.5 and 32.0, respectively. We calculate the average temperature using the formula (temp1 + temp2) / 2.0, and store the result in a variable named avgTemp. Finally, we print out the values of temp1, temp2, and avgTemp</p>

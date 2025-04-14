@@ -1,0 +1,92 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>program to implement a binary search tree.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+class BST {
+    int data;
+    BST *left, *right;
+
+public:
+    // Default constructor.
+    BST();
+
+    // Parameterized constructor.
+    BST(int);
+
+    // Insert function.
+    BST* Insert(BST*, int);
+
+    // Inorder traversal.
+    void Inorder(BST*);
+};
+
+// Default Constructor definition.
+BST ::BST()
+    : data(0)
+    , left(NULL)
+    , right(NULL)
+{
+}
+
+// Parameterized Constructor definition.
+BST ::BST(int value)
+{
+    data = value;
+    left = right = NULL;
+}
+
+// Insert function definition.
+BST* BST ::Insert(BST* root, int value)
+{
+    if (!root) {
+        // Insert the first node, if root is NULL.
+        return new BST(value);
+    }
+
+    // Insert data.
+    if (value &gt; root-&gt;data) {
+        // Insert right node data, if the 'value'
+        // to be inserted is greater than 'root' node data.
+
+        // Process right nodes.
+        root-&gt;right = Insert(root-&gt;right, value);
+    }
+    else if (value &lt; root-&gt;data){
+        // Insert left node data, if the 'value'
+        // to be inserted is smaller than 'root' node data.
+
+        // Process left nodes.
+        root-&gt;left = Insert(root-&gt;left, value);
+    }
+
+    // Return 'root' node, after insertion.
+    return root;
+}
+
+// Inorder traversal function.
+// This gives data in sorted order.
+void BST ::Inorder(BST* root)
+{
+    if (!root) {
+        return;
+    }
+    Inorder(root-&gt;left);
+    cout &lt;&lt; root-&gt;data &lt;&lt; endl;
+    Inorder(root-&gt;right);
+}
+
+// Driver code
+int main()
+{
+    BST b, *root = NULL;
+    root = b.Insert(root, 50);
+    b.Insert(root, 30);
+    b.Insert(root, 20);
+    b.Insert(root, 40);
+    b.Insert(root, 70);
+    b.Insert(root, 60);
+    b.Insert(root, 80);
+
+    b.Inorder(root);
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This is a C++ program that demonstrates the implementation of a Binary Search Tree (BST) data structure. A BST is a tree data structure in which each node has at most two child nodes, usually referred to as the left child and the right child. Furthermore, the left child of a node has a smaller value than the node itself, while the right child has a greater value.</p><p>The program defines a BST class that contains three private data members - an integer data value and two pointers to BST nodes representing the left and right child nodes. The class also has three public member functions:</p><ol><li><p>The default constructor creates a BST object and initializes its data value and pointers to null.</p></li><li><p>The parameterized constructor creates a BST object and initializes its data value to the provided integer parameter value and sets its left and right child pointers to null.</p></li><li><p>The Insert function inserts a new node into the BST data structure. The function takes a BST pointer as a parameter, which represents the root of the tree, and an integer value to be inserted. The function recursively searches the tree to find the appropriate position for the new node and inserts it at the correct location.</p></li></ol><p>The program also defines the Inorder function, which is used to traverse the BST and print out its elements in ascending order. The function takes a BST pointer as a parameter and performs an inorder traversal of the tree.</p><p>In the main function, an instance of the BST class is created, and its Insert function is called repeatedly to insert integers into the BST. Finally, the Inorder function is called to print out the BST elements in ascending order.</p>

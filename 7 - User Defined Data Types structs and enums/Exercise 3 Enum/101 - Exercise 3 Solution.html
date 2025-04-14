@@ -1,0 +1,53 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that uses an <code><strong>enum</strong></code> to represent the days of the week, and prompts the user to enter a number between 1 and 7 to represent a day of the week:</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+enum DayOfWeek {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+};
+
+int main() {
+    int dayNum;
+    cout &lt;&lt; "Enter a number between 1 and 7: ";
+    cin &gt;&gt; dayNum;
+
+    if (dayNum &lt; 1 || dayNum &gt; 7) {
+        cout &lt;&lt; "Invalid day number." &lt;&lt; endl;
+        return 1;
+    }
+
+    DayOfWeek day;
+    switch (dayNum) {
+        case 1:
+            day = MONDAY;
+            break;
+        case 2:
+            day = TUESDAY;
+            break;
+        case 3:
+            day = WEDNESDAY;
+            break;
+        case 4:
+            day = THURSDAY;
+            break;
+        case 5:
+            day = FRIDAY;
+            break;
+        case 6:
+            day = SATURDAY;
+            break;
+        case 7:
+            day = SUNDAY;
+            break;
+    }
+
+    cout &lt;&lt; "You entered " &lt;&lt; dayNum &lt;&lt; ", which corresponds to " &lt;&lt; day &lt;&lt; "." &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we define an <code><strong>enum</strong></code> called <code><strong>DayOfWeek</strong></code>, which has members for each day of the week.</p><p>In the <code><strong>main</strong></code> function, we prompt the user to enter a number between 1 and 7, representing a day of the week. We use an <code><strong>if</strong></code> statement to check if the input is valid, and if not, we print an error message and return from the program.</p><p>If the input is valid, we use a <code><strong>switch</strong></code> statement to set the <code><strong>day</strong></code> variable to the corresponding <code><strong>DayOfWeek</strong></code> enum value. Finally, we output the user's input and the corresponding day of the week to the console.</p><p><br></p>

@@ -1,0 +1,22 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>program that prints a string and finds its length without using any library functions</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+  string str = "Welcome";
+  int length = 0;
+  
+  // print the string
+  cout &lt;&lt; str &lt;&lt; endl;
+  
+  // find the length of the string
+  while (str[length] != '\0') {
+    length++;
+  }
+  
+  // print the length of the string
+  cout &lt;&lt; "Length of the string is: " &lt;&lt; length &lt;&lt; endl;
+  
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><ul><li><p>First, we declare a string variable <code><strong>str</strong></code> and initialize it with the string "Welcome".</p></li><li><p>Next, we declare an integer variable <code><strong>length</strong></code> and initialize it to 0.</p></li><li><p>We then use the <code><strong>cout</strong></code> statement to print the string to the console.</p></li><li><p>Next, we use a <code><strong>while</strong></code> loop to iterate through the string until the null character is reached. Inside the loop, we increment the <code><strong>length</strong></code> variable each time we encounter a character in the string.</p></li><li><p>After the loop, we use the <code><strong>cout</strong></code> statement to print the length of the string to the console.</p></li></ul>

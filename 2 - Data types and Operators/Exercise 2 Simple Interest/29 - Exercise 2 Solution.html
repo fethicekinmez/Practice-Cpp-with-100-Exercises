@@ -1,0 +1,23 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><br></p><p><strong>Exercise for reference: </strong>The program should display the name of the month corresponding to the input month number.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+   float principal, rate, time, interest;
+
+   cout &lt;&lt; "Enter principal amount: ";
+   cin &gt;&gt; principal;
+
+   cout &lt;&lt; "Enter rate of interest: ";
+   cin &gt;&gt; rate;
+
+   cout &lt;&lt; "Enter time (in years): ";
+   cin &gt;&gt; time;
+
+   // Calculate simple interest
+   interest = (principal * rate * time) / 100;
+
+   cout &lt;&lt; "Simple interest = " &lt;&lt; interest;
+
+   return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p><br></p><ol><li><p>We use the <code><strong>cout</strong></code> statement to display a message asking the user to enter the principal amount, and the <code><strong>cin</strong></code> statement to read the user's input from the console and store it in the <code><strong>principal</strong></code> variable. We do the same for the rate of interest and time, using the <code><strong>cout</strong></code> and <code><strong>cin</strong></code> statements to display messages and read input from the user.</p></li><li><p>The next line of code calculates the simple interest using the formula <code><strong>(principal * rate * time) / 100</strong></code>. We store the result in the <code><strong>interest</strong></code> variable.</p></li><li><p>Finally, we use the <code><strong>cout</strong></code> statement to display the simple interest to the user.</p></li></ol>

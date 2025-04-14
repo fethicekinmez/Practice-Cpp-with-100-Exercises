@@ -1,0 +1,22 @@
+<figure><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-23_09-04-18-9610c186d1f9598a7053f99d039841d5.JPG"></figure><p><strong>Exercise for reference: </strong>The program should output the values of the variables and their corresponding memory addresses.</p><p><br></p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;  // Includes the standard input/output library
+
+using namespace std;  // Allows us to use cout, endl, and other functions in the std namespace
+
+int main() {  // The main function that is executed when the program runs
+
+    int x = 10;  // Declares an integer variable named x and initializes it with the value 10
+    float y = 3.14;  // Declares a floating-point variable named y and initializes it with the value 3.14
+
+    int* p = &amp;x;  // Declares a pointer to an integer named p and initializes it with the memory address of x
+    float* q = &amp;y;  // Declares a pointer to a floating-point number named q and initializes it with the memory address of y
+
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;  // Outputs the value of x to the console
+    cout &lt;&lt; "y = " &lt;&lt; y &lt;&lt; endl;  // Outputs the value of y to the console
+    cout &lt;&lt; "&amp;x = " &lt;&lt; &amp;x &lt;&lt; endl;  // Outputs the memory address of x to the console
+    cout &lt;&lt; "&amp;y = " &lt;&lt; &amp;y &lt;&lt; endl;  // Outputs the memory address of y to the console
+    cout &lt;&lt; "p = " &lt;&lt; p &lt;&lt; endl;  // Outputs the value of the pointer p to the console (which is the memory address of x)
+    cout &lt;&lt; "*q = " &lt;&lt; *q &lt;&lt; endl;  // Outputs the value stored at the memory address pointed to by q (which is the value of y)
+
+    return 0;  // Indicates successful program completion
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>This program declares two variables, <code><strong>x</strong></code> and <code><strong>y</strong></code>, and initializes them with values 10 and 3.14, respectively. It also declares two pointers, <code><strong>p</strong></code> and <code><strong>q</strong></code>, and initializes them with the memory addresses of <code><strong>x</strong></code> and <code><strong>y</strong></code>, respectively. The program then outputs the values of <code><strong>x</strong></code> and <code><strong>y</strong></code>, their memory addresses, and the values stored at the memory addresses pointed to by <code><strong>p</strong></code> and <code><strong>q</strong></code>. Finally, the program returns 0 to indicate successful completion.</p>

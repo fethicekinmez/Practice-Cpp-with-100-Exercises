@@ -1,0 +1,53 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>The program should output 10 random numbers between 1 and 100 that are read from the shared buffer by the consumer thread.</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;chrono&gt;
+#include &lt;mutex&gt;
+#include &lt;condition_variable&gt;
+#include &lt;queue&gt;
+#include &lt;random&gt;
+
+std::mutex mtx;
+std::condition_variable cv;
+std::queue&lt;int&gt; buffer;
+
+void producer()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution&lt;int&gt; dist(1, 100);
+    while (true) {
+        std::unique_lock&lt;std::mutex&gt; lock(mtx);
+        int num = dist(gen);
+        buffer.push(num);
+        std::cout &lt;&lt; "Producer produced " &lt;&lt; num &lt;&lt; std::endl;
+        lock.unlock();
+        cv.notify_one();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+}
+
+void consumer()
+{
+    int count = 0;
+    while (count &lt; 10) {
+        std::unique_lock&lt;std::mutex&gt; lock(mtx);
+        cv.wait(lock, [] { return !buffer.empty(); });
+        int num = buffer.front();
+        buffer.pop();
+        std::cout &lt;&lt; "Consumer consumed " &lt;&lt; num &lt;&lt; std::endl;
+        lock.unlock();
+        count++;
+    }
+}
+
+int main()
+{
+    std::thread producer_thread(producer);
+    std::thread consumer_thread(consumer);
+
+    producer_thread.join();
+    consumer_thread.join();
+
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><p>In this program, we create two threads: a producer thread and a consumer thread. The producer thread generates a random number between 1 and 100 every second and adds it to a shared buffer, which is implemented as a std::queue. The consumer thread reads numbers from the buffer and prints them out as they are read. The program continues until the consumer thread has read 10 numbers from the buffer.</p><p>To synchronize access to the shared buffer, we use a std::mutex and a std::condition_variable. The producer thread acquires the mutex, generates a random number, adds it to the buffer, and notifies the consumer thread using the condition variable. The consumer thread acquires the mutex, waits for the condition variable to be signaled (i.e., for the buffer to have at least one element), reads the first element from the buffer, prints it out, and releases the mutex. The program uses a count variable to keep track of the number of numbers that have been read from the buffer by the consumer thread.</p>

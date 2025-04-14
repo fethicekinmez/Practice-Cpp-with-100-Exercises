@@ -1,0 +1,104 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-24_01-54-33-a2d655fdcfa3552ff46f709722426b23.JPG"></p><p><strong>Exercise for reference: </strong>The program to implementing a stack using a linked list</p><p><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+// Define the node structure for the linked list
+struct Node {
+    int data;
+    Node* next;
+};
+
+class Stack {
+    private:
+        Node* top;
+    public:
+        Stack() { // Constructor to initialize the stack
+            top = NULL;
+        }
+        void push(int val) { // Function to push an element onto the stack
+            Node* newNode = new Node;
+            newNode-&gt;data = val;
+            newNode-&gt;next = top;
+            top = newNode;
+        }
+        void pop() { // Function to pop an element from the stack
+            if (top == NULL) {
+                cout &lt;&lt; "Stack Underflow" &lt;&lt; endl;
+                return;
+            }
+            Node* temp = top;
+            top = top-&gt;next;
+            delete temp;
+        }
+        void display() { // Function to display the stack
+            if (top == NULL) {
+                cout &lt;&lt; "Stack is empty" &lt;&lt; endl;
+                return;
+            }
+            Node* temp = top;
+            while (temp != NULL) {
+                cout &lt;&lt; temp-&gt;data &lt;&lt; " ";
+                temp = temp-&gt;next;
+            }
+            cout &lt;&lt; endl;
+        }
+};
+
+int main() {
+    Stack s; // Create a new stack object
+    s.push(5); // Push some elements onto the stack
+    s.push(10);
+    s.push(15);
+    s.display(); // Display the stack
+    s.pop(); // Pop an element from the stack
+    s.display(); // Display the stack again
+    return 0;
+}
+</pre><p><br></p><p><strong>Explanation:</strong></p><ol><li><p>Defining a node structure: To represent the linked list, you can define a node structure that contains two fields: a data field to store the value of the node and a next field that points to the next node in the list. The structure can be defined as follows:</p></li></ol><pre class="prettyprint linenums">struct Node {
+    int data;
+    Node* next;
+};
+</pre><ol start="2"><li><p>Defining a stack: To define the stack, you can create a class that contains a private member variable to store the top of the stack. This variable will point to the head of the linked list. You can define a constructor to initialize the top pointer to NULL. The class can be defined as follows:</p></li></ol><pre class="prettyprint linenums">class Stack {
+    private:
+        Node* top;
+    public:
+        Stack() { // Constructor to initialize the stack
+            top = NULL;
+        }
+        // ...
+};
+</pre><ol start="3"><li><p>Pushing onto the stack: To push an element onto the stack, you can create a new node and make it the new head of the linked list. The next pointer of the new node should point to the previous head of the list. This can be done as follows:</p></li></ol><pre class="prettyprint linenums">void push(int val) { // Function to push an element onto the stack
+    Node* newNode = new Node;
+    newNode-&gt;data = val;
+    newNode-&gt;next = top;
+    top = newNode;
+}
+</pre><ol start="4"><li><p>Popping from the stack: To pop an element from the stack, you can delete the current head of the linked list and make the next node the new head of the list. This can be done as follows:</p></li></ol><pre class="prettyprint linenums">void pop() { // Function to pop an element from the stack
+    if (top == NULL) {
+        cout &lt;&lt; "Stack Underflow" &lt;&lt; endl;
+        return;
+    }
+    Node* temp = top;
+    top = top-&gt;next;
+    delete temp;
+}
+</pre><ol start="5"><li><p>Displaying the stack: To display the elements of the stack, you can traverse the linked list starting from the head and print each element as you go. This can be done as follows:</p></li></ol><pre class="prettyprint linenums">void display() { // Function to display the stack
+    if (top == NULL) {
+        cout &lt;&lt; "Stack is empty" &lt;&lt; endl;
+        return;
+    }
+    Node* temp = top;
+    while (temp != NULL) {
+        cout &lt;&lt; temp-&gt;data &lt;&lt; " ";
+        temp = temp-&gt;next;
+    }
+    cout &lt;&lt; endl;
+}
+</pre><ol start="6"><li><p>Handling stack underflow: If the user tries to pop from an empty stack, you should display an error message. This can be done by checking if the top pointer is NULL in the pop function and returning if it is. You can also handle this in the display function if the stack is empty.</p></li><li><p>Deleting nodes: When the program ends, you should delete all nodes in the linked list to prevent memory leaks. You can do this by traversing the list and deleting each node. You can define a destructor in the Stack class to handle this:</p></li></ol><pre class="prettyprint linenums">~Stack() { // Destructor to delete all nodes in the linked list
+    Node* temp = top;
+    while (temp != NULL) {
+        Node* next = temp-&gt;next;
+        delete temp;
+        temp = next;
+    }
+}
+</pre><p><br></p>

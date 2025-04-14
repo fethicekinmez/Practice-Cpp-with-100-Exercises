@@ -1,0 +1,25 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program should print right triangle star pattern</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int rows;
+  cout &lt;&lt; "Enter the number of rows: ";
+  cin &gt;&gt; rows;
+
+  // Outer loop to control the number of rows
+  for (int i = 1; i &lt;= rows; i++) {
+    // Inner loop to print the spaces before the stars
+    for (int j = 1; j &lt;= rows - i; j++) {
+      cout &lt;&lt; " ";
+    }
+    // Inner loop to print the stars in each row
+    for (int k = 1; k &lt;= i; k++) {
+      cout &lt;&lt; "*";
+    }
+    // Print a newline character to move to the next row
+    cout &lt;&lt; endl;
+  }
+
+  return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>The program uses a nested loop to print the right triangle star pattern. The outer loop runs from 1 to the number of rows entered by the user, and the inner loops print the appropriate number of spaces and stars in each row. The number of spaces decreases from the left to the right, while the number of stars increases from the left to the right. After the inner loops are completed for the current row, the program prints a newline character to move to the next row.</p>

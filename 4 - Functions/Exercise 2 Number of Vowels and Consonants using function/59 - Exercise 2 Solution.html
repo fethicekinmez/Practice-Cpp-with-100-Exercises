@@ -1,0 +1,54 @@
+<p><img src="https://img-c.udemycdn.com/redactor/raw/article_lecture/2023-02-21_04-20-59-bd9bfad0fffe3d3b4711b6994a903abe.JPG"></p><p><strong>Exercise for reference: </strong>The program that takes a string as input and counts the number of vowels and consonants in the string using separate functions.</p><p><br><strong>Answer:</strong></p><p><br></p><pre class="prettyprint linenums">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+bool isVowel(char c) {
+    c = tolower(c);
+
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int countVowels(string str) {
+    int count = 0;
+
+    for (int i = 0; i &lt; str.length(); i++) {
+        if (isVowel(str[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int countConsonants(string str) {
+    int count = 0;
+
+    for (int i = 0; i &lt; str.length(); i++) {
+        if (isalpha(str[i]) &amp;&amp; !isVowel(str[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    string str;
+
+    cout &lt;&lt; "Enter a string: ";
+    getline(cin, str);
+
+    int numVowels = countVowels(str);
+    int numConsonants = countConsonants(str);
+
+    cout &lt;&lt; "Number of vowels: " &lt;&lt; numVowels &lt;&lt; endl;
+    cout &lt;&lt; "Number of consonants: " &lt;&lt; numConsonants &lt;&lt; endl;
+
+    return 0;
+}
+</pre><p><br><strong>Explanation:</strong></p><p>The <code><strong>isalpha()</strong></code> function is used in the <code><strong>countConsonants()</strong></code> function to check if a character is an alphabet or not. This function is included in the <code><strong>ctype.h</strong></code> library, which is automatically included when you include <code><strong>iostream</strong></code>.</p><p>he goal of this exercise is to create a C++ program that counts the number of vowels and consonants in a given string, using separate functions to perform each count.</p><p>Here's a breakdown of the program:</p><ol><li><p>First, the program includes the necessary header files (<code><strong>iostream</strong></code> and <code><strong>string</strong></code>) and uses the <code><strong>using namespace std</strong></code> statement to simplify the code.</p></li><li><p>Next, the program defines two separate functions to perform the vowel and consonant counts: <code><strong>countVowels()</strong></code> and <code><strong>countConsonants()</strong></code>. Each function takes a string parameter and returns the count of either vowels or consonants.</p></li><li><p>The <code><strong>countVowels()</strong></code> function iterates over each character in the input string, checks if the character is a vowel, and increments a counter if it is.</p></li><li><p>The <code><strong>countConsonants()</strong></code> function iterates over each character in the input string, checks if the character is a consonant (by using the <code><strong>isalpha()</strong></code> function to check if it's a letter and <code><strong>isVowel()</strong></code> function to exclude vowels), and increments a counter if it is.</p></li><li><p>The <code><strong>main()</strong></code> function prompts the user to enter a string using the <code><strong>cout</strong></code> and <code><strong>getline()</strong></code> statements, then calls each of the two counting functions with the user-inputted string and displays the results using the <code><strong>cout</strong></code> statement.</p></li><li><p>The program ends with the <code><strong>return 0</strong></code> statement, which signals to the operating system that the program has executed successfully.</p></li></ol>
